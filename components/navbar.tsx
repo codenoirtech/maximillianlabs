@@ -21,108 +21,113 @@ export function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex items-center justify-between px-8 py-6 bg-white border-b border-gray-200">
+      <nav className="flex items-center justify-between px-8 py-6 bg-white">
         <Link href="/" className="flex items-center gap-1">
-          <span className="text-2xl font-bold">creative</span>
-          <span className="text-2xl font-bold text-primary">.</span>
+          <span className="text-xl font-bold">creative</span>
+          <span className="text-xl font-bold text-pink-600">.</span>
         </Link>
-        <Button
-          variant="outline"
-          className="border-gray-900 text-gray-900 hover:bg-gray-50"
-        >
-          Start A Project
-        </Button>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-900 hover:text-gray-600"
+          className="ml-auto mr-4 text-gray-900 hover:text-gray-600"
         >
           <Menu size={28} />
         </button>
-      </nav>
-
-      {/* Mobile Navbar */}
-      <nav className="md:hidden flex items-center justify-between px-4 py-4 bg-white border-b border-gray-200">
-        <Link href="/" className="flex items-center gap-1">
-          <span className="text-xl font-bold">creative</span>
-          <span className="text-xl font-bold text-primary">.</span>
-        </Link>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-900">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <Button
+          variant="outline"
+          className="border-2 border-black text-black hover:bg-gray-50 px-6"
+        >
+          Start A Project
+        </Button>
       </nav>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white min-h-screen">
-          <div className="px-6 py-8">
-            <div className="flex justify-between items-center mb-12">
-              <h3 className="text-lg font-semibold">Menu</h3>
-              <button onClick={() => setIsOpen(false)} className="text-white">
-                <X size={24} />
-              </button>
+        <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-slate-900 to-slate-950 text-white z-40">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 text-white"
+          >
+            <X size={24} />
+          </button>
+
+          <div className="h-screen px-8 py-12 flex items-center justify-between relative">
+            {/* Left Column - Menu */}
+            <div className="flex-1">
+              <h3 className="text-sm font-light mb-8 text-white tracking-wider">
+                Menu
+              </h3>
+              <div className="space-y-5">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="block text-2xl font-bold hover:text-pink-500 transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            {/* Menu Links */}
-            <div className="space-y-6 mb-16">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="block text-2xl font-bold hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+            {/* Center Arrow Divider */}
+            <div className="px-6">
+              <svg
+                className="w-8 h-8 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
             </div>
 
-            {/* Contact Section */}
-            <div className="border-t border-gray-700 pt-8 mt-8">
-              <div className="grid grid-cols-2 gap-8">
-                {/* Left Column */}
-                <div>
-                  <div className="mb-8">
-                    <h4 className="text-sm font-semibold mb-2 text-gray-300">
-                      Phone
-                    </h4>
-                    <p className="text-lg font-bold">(+44) 0207 870 5794</p>
-                  </div>
-                </div>
-
-                {/* Right Column */}
-                <div>
-                  <div className="mb-8">
-                    <h4 className="text-sm font-semibold mb-2 text-gray-300">
-                      E-Mail
-                    </h4>
-                    <p className="text-lg font-bold break-words">
-                      info@creativebranddesign.co.uk
-                    </p>
-                  </div>
-                </div>
+            {/* Right Column - Contact Info */}
+            <div className="flex-1 pl-8">
+              {/* Phone */}
+              <div className="mb-8">
+                <h4 className="text-xs font-light mb-2 text-gray-400 uppercase tracking-wider">
+                  Phone
+                </h4>
+                <p className="text-base font-bold">(+44) 0207 870 5794</p>
               </div>
 
-              {/* Social Links */}
-              <div className="mt-8">
-                <h4 className="text-sm font-semibold mb-4 text-gray-300">
+              {/* Email */}
+              <div className="mb-8">
+                <h4 className="text-xs font-light mb-2 text-gray-400 uppercase tracking-wider">
+                  E-Mail
+                </h4>
+                <p className="text-base font-bold break-words">
+                  info@creativebranddesign.co.uk
+                </p>
+              </div>
+
+              {/* Follow */}
+              <div className="mb-8">
+                <h4 className="text-xs font-light mb-3 text-gray-400 uppercase tracking-wider">
                   Follow
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex gap-5">
                   <Link
                     href="#"
-                    className="hover:text-primary transition-colors text-xl"
+                    className="hover:text-pink-500 transition-colors text-lg"
                   >
                     in
                   </Link>
                   <Link
                     href="#"
-                    className="hover:text-primary transition-colors text-xl"
+                    className="hover:text-pink-500 transition-colors text-lg"
                   >
                     ig
                   </Link>
                   <Link
                     href="#"
-                    className="hover:text-primary transition-colors text-xl"
+                    className="hover:text-pink-500 transition-colors text-lg"
                   >
                     f
                   </Link>
@@ -131,29 +136,13 @@ export function Navbar() {
 
               {/* CTA Button */}
               <Button
-                className="w-full mt-8 border border-white text-white hover:bg-white hover:text-gray-900"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 py-3 px-6 font-semibold"
                 variant="outline"
+                onClick={() => setIsOpen(false)}
               >
                 Start A Project
               </Button>
             </div>
-          </div>
-
-          {/* Arrow Icon */}
-          <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
-            <svg
-              className="w-12 h-12 text-gray-700"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
           </div>
         </div>
       )}
