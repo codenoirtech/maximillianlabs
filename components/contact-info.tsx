@@ -8,8 +8,8 @@ import {
 
 const offices = [
   {
-    city: "London",
-    phone: "(+44) 0207 870 5794",
+    city: "Nigeria",
+    phone: "(+234) 0907 870 5794",
     address: "77 New Cavendish Street, Fitzrovia, W1W 6XB",
   },
   {
@@ -39,7 +39,7 @@ export function ContactInfo() {
           <div>
             <p className="mb-2 text-sm text-zinc-500">E-mail address</p>
             <p className="text-lg font-bold text-black md:text-xl">
-              info@creativebranddesign.co.uk
+              contact@maximillianlabs.com
             </p>
           </div>
 

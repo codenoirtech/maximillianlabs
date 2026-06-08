@@ -37,7 +37,7 @@ const accentColor = "#e91e8c";
 function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={cn("inline-flex items-baseline gap-0.5", className)}>
-      <span className="text-xl font-bold tracking-tight md:text-2xl">creative</span>
+      <span className="text-xl font-bold tracking-tight md:text-2xl">maximillianlabs</span>
       <span className="text-xl font-bold text-[#e63946] md:text-2xl">.</span>
     </Link>
   );
@@ -83,7 +83,7 @@ function ContactSidebar({ onClose }: { onClose: () => void }) {
       <div>
         <p className="mb-2 text-sm text-white/80">E-Mail</p>
         <p className="text-lg font-bold break-words text-white md:text-xl">
-          info@creativebranddesign.co.uk
+          contact@maximillianlabs.com
         </p>
       </div>
 
@@ -117,7 +117,7 @@ function ContactSidebar({ onClose }: { onClose: () => void }) {
       <Button
         variant="outline"
         onClick={onClose}
-        className="h-11 rounded-md border border-white bg-transparent px-6 text-sm font-medium text-white shadow-none hover:bg-white/10"
+        className="h-11 rounded-md border border-white bg-transparent px-6 text-sm font-medium text-white shadow-none"
       >
         Start A Project
       </Button>

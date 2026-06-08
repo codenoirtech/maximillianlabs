@@ -31,14 +31,6 @@ const sectors = [
   "Energy & Environmental",
   "Fashion Website Design",
   "Finance Website Design",
-  "Fintech Website Design",
-  "Healthcare Web Design",
-  "Hospitality Web Design",
-  "IT and Tech",
-  "Law Firm Website Design",
-  "Luxury Website Design",
-  "Manufacturing Website Design",
-  "Recruitment Website Design",
   "SaaS Website Design",
 ];
 
@@ -58,20 +50,9 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
           <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="inline-flex items-baseline gap-0.5">
-              <span className="text-2xl font-bold tracking-tight">creative</span>
+              <span className="text-2xl font-bold tracking-tight">Maximillian Labs</span>
               <span className="text-2xl font-bold text-[#e63946]">.</span>
             </Link>
-            <div className="flex flex-wrap gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded border border-white/20 bg-white/5 text-[8px] font-bold leading-tight text-center">
-                BM
-                <br />
-                TRADA
-              </div>
-              <div className="flex h-14 w-14 items-center justify-center rounded border border-white/20 bg-white/5 text-[8px] font-bold leading-tight text-center">
-                UKAS
-              </div>
-            </div>
-            <p className="text-xs text-zinc-500">Surrey office only</p>
           </div>
 
           <div>
@@ -93,7 +74,7 @@ export function SiteFooter() {
                   href="mailto:info@creativebranddesign.co.uk"
                   className="hover:text-white"
                 >
-                  info@creativebranddesign.co.uk
+                 contact@maximillianlabs.com
                 </Link>
               </p>
               <p>(+44) 0207 870 5794</p>
@@ -146,8 +127,7 @@ export function SiteFooter() {
 
         <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
           <p className="max-w-xl text-xs leading-relaxed text-zinc-500">
-            CreativeWeb is a trading name of Creative Brand Design Ltd © 2025
-            Creative Brand Design Ltd. Registered in England No. 08757535
+          Maximillian is a trading name of Maximillian Labs Design Ltd © 2025
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
