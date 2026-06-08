@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import office from '@/public/images/office.jpg'
 
 export function CultureSection() {
   return (
@@ -60,7 +61,7 @@ export function CultureSection() {
               <div className="overflow-hidden rounded-xl shadow-lg">
                 <div className="relative h-48 w-full sm:h-60 bg-muted">
                   <Image
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop"
+                    src={office}
                     alt="Office workspace with team"
                     fill
                     className="object-cover"
@@ -74,7 +75,7 @@ export function CultureSection() {
               <div className="overflow-hidden rounded-xl shadow-lg">
                 <div className="relative h-44 w-full sm:h-52 bg-muted">
                   <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop"
+                    src={office}
                     alt="Team collaboration"
                     fill
                     className="object-cover"
@@ -88,7 +89,7 @@ export function CultureSection() {
               <div className="overflow-hidden rounded-xl shadow-lg">
                 <div className="relative h-40 w-full sm:h-48 bg-muted">
                   <Image
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop"
+                    src={office}
                     alt="Creative workspace"
                     fill
                     className="object-cover"
