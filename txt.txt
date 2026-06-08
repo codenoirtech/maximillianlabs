@@ -1,0 +1,7 @@
+1. once user order debit instantly and move the money to merchant account (airpero). - done 
+
+order recieved by employee would show pick any employee that pick the order the rest would not be able to pick the order and on refresh the order would disappear or when clicked it would show order unavaiable ( note the pick button or logo would be on the vendor page order list so when clicked it would be assign to that partcular person but another employee wont be able to pick it up again it would show unavaiable )
+
+2. order status - pending (on all new order) - done 
+
+3. confirmed - the order can never go back to pending , vendor wallet would be credit upon confirmed 

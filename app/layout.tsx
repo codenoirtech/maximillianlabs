@@ -9,9 +9,53 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maximillian Labs - Web Design Agency",
+  metadataBase: new URL("https://maximillianlabs.com"),
+  title: {
+    default: "Maximillian Labs | Award-Winning Web Design Agency",
+    template: "%s | Maximillian Labs",
+  },
   description:
-    "London based award-winning web design agency creating bespoke and interactive web experiences",
+    "London-based award-winning web design agency creating bespoke, high-performance, and interactive digital experiences for ambitious brands.",
+  keywords: [
+    "web design agency",
+    "London web design",
+    "UI UX design",
+    "SEO services",
+    "branding agency",
+    "digital agency",
+  ],
+  authors: [{ name: "Maximillian Labs" }],
+  creator: "Maximillian Labs",
+  publisher: "Maximillian Labs",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "/",
+    title: "Maximillian Labs | Award-Winning Web Design Agency",
+    description:
+      "Bespoke web design, branding, and digital experiences built by a London team focused on measurable growth.",
+    siteName: "Maximillian Labs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maximillian Labs | Award-Winning Web Design Agency",
+    description:
+      "Bespoke web design, branding, and digital experiences built for growth-focused brands.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [
       {
@@ -39,9 +83,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} bg-white`}
+      className={`${geistSans.variable} ${geistMono.variable} bg-[#f4f4f5]`}
     >
-      <body className="font-sans antialiased bg-white">
+      <body className="font-sans antialiased bg-[#f4f4f5] text-foreground">
         {children}
       </body>
     </html>
