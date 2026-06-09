@@ -28,7 +28,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-8 max-w-2xl text-sm leading-relaxed text-zinc-700 md:mt-10 md:text-base md:leading-7">
-          We&apos;re CreativeWeb an award-winning{" "}
+          We&apos;re Maximillian Labs an award-winning{" "}
           <span className="font-bold text-black">London based web design agency</span>
           , focused on creating bespoke and interactive{" "}
           <span className="font-bold text-black">web experiences</span> for aspiring
