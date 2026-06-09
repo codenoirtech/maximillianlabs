@@ -198,7 +198,12 @@ function MenuNavItem({
   );
 }
 
-export function Navbar() {
+type NavbarProps = {
+  variant?: "light" | "dark";
+};
+
+export function Navbar({ variant = "light" }: NavbarProps) {
+  const isDark = variant === "dark";
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState<string | null>(null);
   const [showServices, setShowServices] = useState(false);
@@ -225,12 +230,19 @@ export function Navbar() {
   return (
     <>
       <header className="relative z-30 mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-6 md:px-10 md:py-8">
-        <Logo />
+        <Logo
+          className={cn(isDark && "[&_span:first-child]:text-white")}
+        />
 
         <div className="flex items-center gap-4 md:gap-5">
           <Button
             variant="outline"
-            className="h-10 rounded-md border border-black bg-transparent px-5 text-sm font-medium text-black shadow-none hover:bg-black/5 md:h-11 md:px-6"
+            className={cn(
+              "h-10 rounded-md border bg-transparent px-5 text-sm font-medium shadow-none md:h-11 md:px-6",
+              isDark
+                ? "border-white text-white hover:bg-white/10"
+                : "border-black text-black hover:bg-black/5",
+            )}
           >
             Start A Project
           </Button>
@@ -240,7 +252,10 @@ export function Navbar() {
             aria-label="Open menu"
             aria-expanded={isOpen}
             onClick={openMenu}
-            className="flex h-10 w-10 items-center justify-center text-black transition-opacity hover:opacity-60"
+            className={cn(
+              "flex h-10 w-10 items-center justify-center transition-opacity hover:opacity-60",
+              isDark ? "text-white" : "text-black",
+            )}
           >
             <MenuIcon />
           </button>

@@ -71,10 +71,10 @@ export function SiteFooter() {
               </Link>
               <p>
                 <Link
-                  href="mailto:info@creativebranddesign.co.uk"
+                  href="mailto:contact@maximillianlabs.com"
                   className="hover:text-white"
                 >
-                 contact@maximillianlabs.com
+                  contact@maximillianlabs.com
                 </Link>
               </p>
               <p>(+44) 0207 870 5794</p>
