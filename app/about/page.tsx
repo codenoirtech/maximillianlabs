@@ -47,7 +47,7 @@ export default function AboutPage() {
                     Agency Overview
                   </span>
                 </div>
-                <h2 className="text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-black leading-[1.05] tracking-[-0.02em] text-black">
+                <h2 className="text-balance text-[clamp(2.25rem,5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.02em] text-black">
                   Our Values
                 </h2>
               </div>

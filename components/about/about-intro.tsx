@@ -16,7 +16,7 @@ export function AboutIntro() {
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <h2 className="text-balance text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.08] tracking-[-0.02em] text-black">
+          <h2 className="text-balance text-[clamp(2rem,5vw,3.5rem)] font-normal leading-[1.08] tracking-[-0.02em] text-black">
             We design bespoke &amp; engaging websites for businesses and
             enterprises worldwide
           </h2>
