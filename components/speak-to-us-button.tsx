@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function SpeakToUsButton() {
+  const pathname = usePathname();
+
+  if (pathname === "/contact-us") {
+    return null;
+  }
+
   return (
     <div className="fixed bottom-8 right-8 z-50">
       <Link

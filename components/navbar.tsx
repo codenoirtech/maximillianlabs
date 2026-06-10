@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRight, ChevronLeft, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -203,6 +204,7 @@ type NavbarProps = {
 };
 
 export function Navbar({ variant = "light" }: NavbarProps) {
+  const pathname = usePathname();
   const isDark = variant === "dark";
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState<string | null>(null);
@@ -229,23 +231,32 @@ export function Navbar({ variant = "light" }: NavbarProps) {
 
   return (
     <>
-      <header className="relative z-30 mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-6 md:px-10 md:py-8">
-        <Logo
-          className={cn(isDark && "[&_span:first-child]:text-white")}
-        />
+      <div
+        className={cn(
+          "sticky top-0 z-40 w-full",
+          isDark
+            ? "bg-[#080808]/90 backdrop-blur-md"
+            : "bg-[#f4f4f5]/90 backdrop-blur-md",
+        )}
+      >
+        <header className="relative mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-6 md:px-10 md:py-8">
+          <Logo
+            className={cn(isDark && "[&_span:first-child]:text-white")}
+          />
 
-        <div className="flex items-center gap-4 md:gap-5">
-          <Button
-            variant="outline"
-            className={cn(
-              "h-10 rounded-md border bg-transparent px-5 text-sm font-normal shadow-none md:h-11 md:px-6",
-              isDark
-                ? "border-white text-white hover:bg-white/10"
-                : "border-black text-black hover:bg-black/5",
-            )}
-          >
-            Start A Project
-          </Button>
+          <div className="flex items-center gap-4 md:gap-5">
+            <Button
+              variant="outline"
+              asChild
+              className={cn(
+                "h-10 rounded-md border bg-transparent px-5 text-sm font-normal shadow-none md:h-11 md:px-6",
+                isDark
+                  ? "border-white text-white hover:bg-white/10"
+                  : "border-black text-black hover:bg-black/5",
+              )}
+            >
+              <Link href="/contact-us">Start A Project</Link>
+            </Button>
 
           <button
             type="button"
@@ -260,7 +271,8 @@ export function Navbar({ variant = "light" }: NavbarProps) {
             <MenuIcon />
           </button>
         </div>
-      </header>
+        </header>
+      </div>
 
       <AnimatePresence>
         {isOpen ? (
@@ -277,7 +289,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
           >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
               <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(4rem,16vw,12rem)] font-normal leading-none tracking-tight text-white/70 select-none">
-                creative
+                maximillian
               </p>
             </div>
 
@@ -351,7 +363,10 @@ export function Navbar({ variant = "light" }: NavbarProps) {
                                     <MenuNavItem
                                       label={item.label}
                                       href={item.href}
-                                      isActive={activeItem === item.label}
+                                      isActive={
+                                        activeItem === item.label ||
+                                        pathname === item.href
+                                      }
                                       onHover={() => setActiveItem(item.label)}
                                       onLeave={() => setActiveItem(null)}
                                       onClick={closeMenu}
