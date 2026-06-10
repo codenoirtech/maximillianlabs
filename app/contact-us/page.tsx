@@ -3,7 +3,6 @@ import { Navbar } from "@/components/navbar";
 import { ContactForm } from "@/components/contact-form";
 import { ContactInfo } from "@/components/contact-info";
 import { SiteFooter } from "@/components/site-footer";
-import { SpeakToUsButton } from "@/components/speak-to-us-button";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -23,13 +22,13 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="w-full">
-      <div className="bg-[#f4f4f5]">
-        <Navbar />
-      </div>
-      <ContactForm />
+      <section className="relative min-h-screen overflow-hidden bg-[#080808]">
+        <Navbar variant="dark" />
+        <ContactForm />
+      </section>
+
       <ContactInfo />
       <SiteFooter />
-      <SpeakToUsButton />
     </main>
   );
 }

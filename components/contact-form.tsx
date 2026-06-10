@@ -63,7 +63,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#080808] px-6 py-10 md:px-14 md:py-14 lg:px-24 lg:py-16">
+    <div className="relative px-6 pb-16 pt-4 md:px-14 md:pb-20 md:pt-6 lg:px-24 lg:pb-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-[#5c1038]/35 blur-[100px]"
@@ -220,6 +220,6 @@ export function ContactForm() {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
