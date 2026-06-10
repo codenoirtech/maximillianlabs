@@ -15,12 +15,12 @@ export function AboutHero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl"
         >
-          <h1 className="text-[clamp(3.25rem,9vw,6.5rem)] font-black leading-[0.95] tracking-[-0.03em]">
+          <h1 className="text-[clamp(3.25rem,9vw,6.5rem)] font-normal leading-[0.95] tracking-[-0.03em]">
             be more creative
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 sm:mt-8 sm:text-lg">
             We&apos;re{" "}
-            <span className="font-black">Maximillian Labs</span> an award
+            <span className="font-normal">Maximillian Labs</span> an award
             winning web design agency.
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export function AboutHero() {
           >
             <Link
               href="/contact-us"
-              className="flex h-24 w-24 items-center justify-center rounded-full bg-[#c6f135] text-center text-sm font-black leading-tight text-black shadow-2xl transition-transform hover:scale-105 sm:h-28 sm:w-28"
+              className="flex h-24 w-24 items-center justify-center rounded-full bg-[#c6f135] text-center text-sm font-normal leading-tight text-black shadow-2xl transition-transform hover:scale-105 sm:h-28 sm:w-28"
             >
               Speak To Us
             </Link>

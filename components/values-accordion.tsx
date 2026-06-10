@@ -105,7 +105,7 @@ export function ValuesAccordion() {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
               >
-                <h3 className="text-lg font-black tracking-tight text-black sm:text-xl">
+                <h3 className="text-lg font-normal tracking-tight text-black sm:text-xl">
                   {value.title}
                 </h3>
                 <AccordionIcon isOpen={isOpen} />

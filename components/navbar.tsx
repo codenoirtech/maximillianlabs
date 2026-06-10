@@ -37,8 +37,8 @@ const accentColor = "#e91e8c";
 function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={cn("inline-flex items-baseline gap-0.5", className)}>
-      <span className="text-xl font-bold tracking-tight md:text-2xl">maximillianlabs</span>
-      <span className="text-xl font-bold text-[#e63946] md:text-2xl">.</span>
+      <span className="text-xl font-normal tracking-tight md:text-2xl">maximillianlabs</span>
+      <span className="text-xl font-normal text-[#e63946] md:text-2xl">.</span>
     </Link>
   );
 }
@@ -77,12 +77,12 @@ function ContactSidebar({ onClose }: { onClose: () => void }) {
     >
       <div>
         <p className="mb-2 text-sm text-white/80">Phone</p>
-        <p className="text-lg font-bold text-white md:text-xl">(+44) 0207 870 5794</p>
+        <p className="text-lg font-normal text-white md:text-xl">(+44) 0207 870 5794</p>
       </div>
 
       <div>
         <p className="mb-2 text-sm text-white/80">E-Mail</p>
-        <p className="text-lg font-bold break-words text-white md:text-xl">
+        <p className="text-lg font-normal break-words text-white md:text-xl">
           contact@maximillianlabs.com
         </p>
       </div>
@@ -117,7 +117,7 @@ function ContactSidebar({ onClose }: { onClose: () => void }) {
       <Button
         variant="outline"
         onClick={onClose}
-        className="h-11 rounded-md border border-white bg-transparent px-6 text-sm font-medium text-white shadow-none"
+        className="h-11 rounded-md border border-white bg-transparent px-6 text-sm font-normal text-white shadow-none"
       >
         Start A Project
       </Button>
@@ -157,7 +157,7 @@ function MenuNavItem({
         initial={false}
         animate={{ color: isActive ? accentColor : "#ffffff" }}
         transition={{ duration: 0.25 }}
-        className="text-2xl font-bold tracking-tight md:text-3xl lg:text-[2rem] lg:leading-tight"
+        className="text-2xl font-normal tracking-tight md:text-3xl lg:text-[2rem] lg:leading-tight"
       >
         {label}
       </motion.span>
@@ -238,7 +238,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
           <Button
             variant="outline"
             className={cn(
-              "h-10 rounded-md border bg-transparent px-5 text-sm font-medium shadow-none md:h-11 md:px-6",
+              "h-10 rounded-md border bg-transparent px-5 text-sm font-normal shadow-none md:h-11 md:px-6",
               isDark
                 ? "border-white text-white hover:bg-white/10"
                 : "border-black text-black hover:bg-black/5",
@@ -276,7 +276,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
             aria-label="Navigation menu"
           >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(4rem,16vw,12rem)] font-bold leading-none tracking-tight text-white/70 select-none">
+              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(4rem,16vw,12rem)] font-normal leading-none tracking-tight text-white/70 select-none">
                 creative
               </p>
             </div>
@@ -300,7 +300,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
               </motion.div>
 
               <div className="hidden lg:flex absolute left-10 top-1/2 -translate-y-1/2 -rotate-90">
-                <span className="text-[11px] font-medium tracking-[0.2em] text-zinc-600 uppercase">
+                <span className="text-[11px] font-normal tracking-[0.2em] text-zinc-600 uppercase">
                   Scroll Down
                 </span>
               </div>

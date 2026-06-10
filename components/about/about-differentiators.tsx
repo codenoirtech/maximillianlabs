@@ -40,7 +40,7 @@ export function AboutDifferentiators() {
               What Makes Us Different
             </span>
           </div>
-          <h2 className="max-w-3xl text-balance text-[clamp(2rem,4.5vw,3.25rem)] font-black leading-[1.1] tracking-[-0.02em]">
+          <h2 className="max-w-3xl text-balance text-[clamp(2rem,4.5vw,3.25rem)] font-normal leading-[1.1] tracking-[-0.02em]">
             What makes us a leading web design agency
           </h2>
         </FadeIn>
@@ -51,7 +51,7 @@ export function AboutDifferentiators() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#e63946]" />
-                  <h3 className="text-xl font-black tracking-tight sm:text-2xl">
+                  <h3 className="text-xl font-normal tracking-tight sm:text-2xl">
                     {item.title}
                   </h3>
                 </div>

@@ -25,7 +25,7 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
       <div className="h-px w-full bg-[#e91e8c]" />
       <div
         className={cn(
-          "absolute top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white text-sm font-bold text-black md:h-9 md:w-9",
+          "absolute top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white text-sm font-normal text-black md:h-9 md:w-9",
           step === 1 ? "left-0" : "right-0"
         )}
       >
@@ -84,7 +84,7 @@ export function ContactForm() {
                   <span className="h-2 w-2 rounded-full bg-[#e91e8c]" />
                   <span className="text-sm text-zinc-400">Contact Us</span>
                 </div>
-                <h1 className="max-w-lg text-[2rem] font-bold leading-[1.15] tracking-tight text-white md:text-[2.5rem] lg:text-[2.75rem]">
+                <h1 className="max-w-lg text-[2rem] font-normal leading-[1.15] tracking-tight text-white md:text-[2.5rem] lg:text-[2.75rem]">
                   Interested in discussing a project with us?
                 </h1>
               </div>
@@ -132,7 +132,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 variant="outline"
-                className="h-11 rounded-md border border-white bg-transparent px-7 text-sm font-medium text-white shadow-none hover:bg-white/10"
+                className="h-11 rounded-md border border-white bg-transparent px-7 text-sm font-normal text-white shadow-none hover:bg-white/10"
               >
                 Next Step
               </Button>
@@ -140,10 +140,10 @@ export function ContactForm() {
           ) : (
             <form onSubmit={handleFinalSubmit} className="space-y-8">
               <div>
-                <h2 className="text-[2rem] font-bold tracking-tight text-white md:text-[2.5rem] lg:text-[2.75rem]">
+                <h2 className="text-[2rem] font-normal tracking-tight text-white md:text-[2.5rem] lg:text-[2.75rem]">
                   Project Scope
                 </h2>
-                <p className="mt-4 text-base font-semibold text-white md:text-lg">
+                <p className="mt-4 text-base font-normal text-white md:text-lg">
                   You can select multiple services
                 </p>
               </div>
@@ -158,7 +158,7 @@ export function ContactForm() {
                       type="button"
                       onClick={() => toggleService(service)}
                       className={cn(
-                        "rounded-full border px-4 py-2 text-sm font-medium transition-colors md:px-5 md:py-2.5",
+                        "rounded-full border px-4 py-2 text-sm font-normal transition-colors md:px-5 md:py-2.5",
                         isSelected
                           ? "border-white bg-white text-black"
                           : "border-white/60 bg-transparent text-white hover:border-white"
@@ -185,7 +185,7 @@ export function ContactForm() {
               <label className="flex cursor-pointer items-center gap-4 rounded-lg border border-dashed border-zinc-600 bg-[#1c1c1c] px-5 py-5 transition-colors hover:border-zinc-400">
                 <FolderOpen className="h-6 w-6 shrink-0 text-zinc-400" strokeWidth={1.5} />
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-white">Send us your brief</p>
+                  <p className="text-sm font-normal text-white">Send us your brief</p>
                   <p className="text-xs text-zinc-500">PDF, DOC</p>
                 </div>
                 <input type="file" accept=".pdf,.doc,.docx" className="sr-only" />
@@ -204,14 +204,14 @@ export function ContactForm() {
                 <Button
                   type="submit"
                   variant="outline"
-                  className="h-11 rounded-md border border-white bg-transparent px-7 text-sm font-medium text-white shadow-none hover:bg-white/10"
+                  className="h-11 rounded-md border border-white bg-transparent px-7 text-sm font-normal text-white shadow-none hover:bg-white/10"
                 >
                   Submit Form
                 </Button>
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="text-sm font-medium text-[#e91e8c] transition-opacity hover:opacity-70"
+                  className="text-sm font-normal text-[#e91e8c] transition-opacity hover:opacity-70"
                 >
                   Return To Previous
                 </button>
