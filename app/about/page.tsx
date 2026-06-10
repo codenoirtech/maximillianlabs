@@ -8,6 +8,11 @@ import { AboutImageGrid } from "@/components/about/about-image-grid";
 import { AboutDifferentiators } from "@/components/about/about-differentiators";
 import { AboutValuesSection } from "@/components/about/about-values-section";
 import { AboutCulture } from "@/components/about/about-culture";
+import { AboutInternational } from "@/components/about/about-international";
+import { AboutAwards } from "@/components/about/about-awards";
+import { AboutTeam } from "@/components/about/about-team";
+import { AboutLatestWork } from "@/components/about/about-latest-work";
+import { AboutCareers } from "@/components/about/about-careers";
 
 export const metadata: Metadata = {
   title: "Our Agency",
@@ -36,7 +41,12 @@ export default function AboutPage() {
       <AboutImageGrid />
       <AboutDifferentiators />
       <AboutValuesSection />
+      <AboutInternational />
+      <AboutAwards />
+      <AboutTeam />
       <AboutCulture />
+      <AboutLatestWork />
+      <AboutCareers />
 
       <SiteFooter />
       <SpeakToUsButton />
