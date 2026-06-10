@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-kollektif), "Kollektif Sans", ui-sans-serif, system-ui,
     sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-kollektif), "Kollektif Sans", ui-monospace, monospace;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -122,10 +122,56 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html,
+  body {
+    @apply font-sans;
+    font-family: var(--font-kollektif), "Kollektif Sans", ui-sans-serif, system-ui,
+      sans-serif;
+    font-weight: 400;
+    font-synthesis: none;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a,
+    li,
+    button,
+    input,
+    textarea,
+    label,
+    small,
+    strong,
+    b,
+    em,
+    td,
+    th
+  ) {
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .font-thin,
+  .font-extralight,
+  .font-light,
+  .font-normal,
+  .font-medium,
+  .font-semibold,
+  .font-bold,
+  .font-extrabold,
+  .font-black {
+    font-weight: 400;
   }
 }

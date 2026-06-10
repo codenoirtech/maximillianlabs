@@ -43,11 +43,11 @@ export function CultureSection() {
         <div className="mb-16">
           <div className="mb-3 flex items-center gap-2">
             <div className="h-2.5 w-2.5 rounded-full bg-accent" />
-            <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+            <span className="text-xs font-normal tracking-wide text-muted-foreground uppercase">
               Be I-Core Creative
             </span>
           </div>
-          <h2 className="text-balance text-4xl font-light tracking-tight text-foreground sm:text-5xl">
+          <h2 className="text-balance text-4xl font-normal tracking-tight text-foreground sm:text-5xl">
             A Culture Driven by Creativity
           </h2>
         </div>

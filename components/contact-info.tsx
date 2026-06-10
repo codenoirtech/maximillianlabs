@@ -31,14 +31,14 @@ export function ContactInfo() {
         <div className="space-y-10">
           <div>
             <p className="mb-2 text-sm text-zinc-500">Phone number</p>
-            <p className="text-2xl font-bold tracking-tight text-black md:text-3xl">
+            <p className="text-2xl font-normal tracking-tight text-black md:text-3xl">
               (+44) 0207 870 5794
             </p>
           </div>
 
           <div>
             <p className="mb-2 text-sm text-zinc-500">E-mail address</p>
-            <p className="text-lg font-bold text-black md:text-xl">
+            <p className="text-lg font-normal text-black md:text-xl">
               contact@maximillianlabs.com
             </p>
           </div>
@@ -79,7 +79,7 @@ export function ContactInfo() {
             >
               <div>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <h3 className="text-lg font-bold text-black">{office.city}</h3>
+                  <h3 className="text-lg font-normal text-black">{office.city}</h3>
                   <p className="text-sm text-black">{office.phone}</p>
                 </div>
                 <p className="mt-1 text-sm text-black">{office.address}</p>

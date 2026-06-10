@@ -31,13 +31,13 @@ export function AboutSection() {
             {/* Badge */}
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-pink-600" />
-              <p className="text-sm font-medium text-gray-700">
+              <p className="text-sm font-normal text-gray-700">
                 London Web Design Agency
               </p>
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-normal tracking-tight">
               Maximillian Labs<span className="text-pink-600">.</span>
             </h2>
 
@@ -106,7 +106,7 @@ export function AboutSection() {
 
       {/* Floating Speak To Us button */}
       <div className="fixed bottom-8 right-8 z-50">
-        <button className="flex h-28 w-28 items-center justify-center rounded-full bg-lime-400 text-center font-bold text-black shadow-2xl transition-transform hover:scale-110">
+        <button className="flex h-28 w-28 items-center justify-center rounded-full bg-lime-400 text-center font-normal text-black shadow-2xl transition-transform hover:scale-110">
           <span className="text-sm leading-tight px-2">Speak To Us</span>
         </button>
       </div>

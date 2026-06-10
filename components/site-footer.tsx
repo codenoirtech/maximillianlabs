@@ -50,15 +50,15 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
           <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="inline-flex items-baseline gap-0.5">
-              <span className="text-2xl font-bold tracking-tight">Maximillian Labs</span>
-              <span className="text-2xl font-bold text-[#e63946]">.</span>
+              <span className="text-2xl font-normal tracking-tight">Maximillian Labs</span>
+              <span className="text-2xl font-normal text-[#e63946]">.</span>
             </Link>
           </div>
 
           <div>
-            <h3 className="mb-5 text-sm font-bold">Contact</h3>
+            <h3 className="mb-5 text-sm font-normal">Contact</h3>
             <div className="space-y-3 text-sm leading-relaxed text-zinc-300">
-              <p className="font-medium text-white">London Office</p>
+              <p className="font-normal text-white">London Office</p>
               <p>
                 77 New Cavendish Street,
                 <br />
@@ -82,7 +82,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-sm font-bold">Services</h3>
+            <h3 className="mb-5 text-sm font-normal">Services</h3>
             <ul className="space-y-2.5 text-sm text-zinc-300">
               {services.map((item) => (
                 <li key={item}>
@@ -95,7 +95,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-sm font-bold">Quick Links</h3>
+            <h3 className="mb-5 text-sm font-normal">Quick Links</h3>
             <ul className="space-y-2.5 text-sm text-zinc-300">
               {quickLinks.map((item) => (
                 <li key={item}>
@@ -111,7 +111,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-sm font-bold">Sector Spotlight</h3>
+            <h3 className="mb-5 text-sm font-normal">Sector Spotlight</h3>
             <ul className="space-y-2.5 text-sm text-zinc-300">
               {sectors.map((item) => (
                 <li key={item} className="flex items-start gap-2">

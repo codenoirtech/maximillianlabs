@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
 import { kollektifSans } from "@/lib/fonts";
 import "./globals.css";
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maximillianlabs.com"),
@@ -83,9 +77,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${kollektifSans.variable} ${geistMono.variable} bg-[#f4f4f5]`}
+      className={`${kollektifSans.variable} bg-[#f4f4f5]`}
     >
-      <body className="font-sans antialiased bg-[#f4f4f5] text-foreground">
+      <body
+        className={`${kollektifSans.className} font-sans font-normal antialiased bg-[#f4f4f5] text-foreground`}
+      >
         {children}
       </body>
     </html>
