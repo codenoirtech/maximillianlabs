@@ -28,7 +28,7 @@ const values: ValueItem[] = [
   {
     title: "We Care",
     description:
-      "We pride ourselves on promoting a supportive environment, celebrating every success that comes our way. Our creative and professional ethos encourages flexibility so you can work from anywhere as part of our globally connected team.",
+      "We always aim to produce the best possible end product for our clients, often going above and beyond in our pursuit to create an exceptional end product. At the end of the day, we want to showcase the work we create, share it with the world, and take pride in it. This dedication is why many of our websites have won awards for their designs.",
   },
 ];
 
