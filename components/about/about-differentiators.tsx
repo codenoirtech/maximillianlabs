@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/fade-in";
+import { SectionLabel } from "@/components/about/section-label";
 
 const differentiators = [
   {
@@ -18,46 +19,52 @@ const differentiators = [
     description:
       "Everything we do is designed and developed by our team, unique to your requirements – we don't do templates or boring designs.",
   },
+  {
+    title: "Guaranteed Service",
+    description:
+      "Our service is fully guaranteed and backed by a warranty, ensuring complete support for every project.",
+  },
 ];
 
 export function AboutDifferentiators() {
   return (
-    <section className="relative overflow-hidden bg-[#0a0a0a] px-6 py-20 text-white sm:px-10 sm:py-24 lg:px-16 lg:py-28">
+    <section className="relative overflow-hidden bg-[#151717] px-6 py-[calc(3rem+3vh)] text-white sm:px-10 lg:px-16">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-1/4 h-[420px] w-[420px] rounded-full bg-[#4a1030]/35 blur-3xl"
+        className="pointer-events-none absolute -left-[20vw] top-0 h-[70vw] w-[70vw] rounded-full bg-[#fe802d]/20 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 bottom-0 h-[380px] w-[380px] rounded-full bg-[#2a1035]/45 blur-3xl"
+        className="pointer-events-none absolute -right-[15vw] bottom-0 h-[55vw] w-[55vw] rounded-full bg-[#ac0bd9]/25 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-[1400px]">
         <FadeIn>
-          <div className="mb-4 flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#e63946]" />
-            <span className="text-xs font-normal tracking-wide text-zinc-400 uppercase">
-              What Makes Us Different
-            </span>
+          <div className="w-full lg:ml-[8.333%] lg:w-3/4">
+            <SectionLabel inverted>What Makes Us Different</SectionLabel>
+            <h2 className="text-balance text-[clamp(1.75rem,3vw+1rem,2.75rem)] font-normal leading-[1.12] tracking-[-0.02em]">
+              What makes us a leading web design agency
+            </h2>
           </div>
-          <h2 className="max-w-3xl text-balance text-[clamp(2rem,4.5vw,3.25rem)] font-normal leading-[1.1] tracking-[-0.02em]">
-            What makes us a leading web design agency
-          </h2>
         </FadeIn>
 
-        <div className="mt-14 grid gap-12 md:mt-16 md:grid-cols-3 md:gap-10 lg:gap-14">
+        <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] lg:mt-16 lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden">
           {differentiators.map((item, index) => (
-            <FadeIn key={item.title} delay={0.1 + index * 0.08}>
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#e63946]" />
-                  <h3 className="text-xl font-normal tracking-tight sm:text-2xl">
+            <FadeIn
+              key={item.title}
+              delay={0.08 + index * 0.06}
+              className="min-w-[78vw] shrink-0 snap-start sm:min-w-[340px] lg:min-w-0"
+            >
+              <div className="flex h-full flex-col gap-4 lg:gap-8">
+                <span className="h-2 w-2 rounded-full bg-[#fe0168]" />
+                <div>
+                  <h3 className="mb-3 text-xl font-normal tracking-tight sm:text-2xl">
                     {item.title}
                   </h3>
+                  <p className="text-sm leading-relaxed text-white/75 sm:text-base">
+                    {item.description}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-                  {item.description}
-                </p>
               </div>
             </FadeIn>
           ))}

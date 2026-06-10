@@ -3,64 +3,64 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import office from "@/public/images/office.jpg";
+import heroImage from "@/public/images/about/grid-hero.png";
 
 export function AboutHero() {
   return (
-    <section className="bg-black px-6 pb-16 pt-8 text-white sm:px-10 sm:pb-20 sm:pt-10 lg:px-16 lg:pb-24">
-      <div className="mx-auto max-w-[1400px]">
+    <section className="relative z-[2] overflow-hidden bg-black pb-0 text-white">
+      <div className="pointer-events-none absolute inset-0 bg-black" />
+
+      <div className="relative z-20 mx-auto max-w-[1400px] px-6 pt-[calc(3rem+3vh)] sm:px-10 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl"
+          className="w-full sm:w-3/4 md:w-1/2"
         >
-          <h1 className="text-[clamp(3.25rem,9vw,6.5rem)] font-normal leading-[0.95] tracking-[-0.03em]">
-            be more creative
+          <h1 className="mb-6 text-[clamp(2.75rem,6vw+1rem,5.5rem)] font-normal leading-[1.05] tracking-[-0.02em]">
+            Be More Creative
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 sm:mt-8 sm:text-lg">
-            We&apos;re{" "}
-            <span className="font-normal">Maximillian Labs</span> an award
-            winning web design agency.
+          <p className="text-base leading-relaxed text-white/90 sm:text-lg">
+            We&apos;re Maximillian Labs an award winning web design agency.
           </p>
         </motion.div>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.75,
-            delay: 0.15,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="relative mt-10 overflow-hidden rounded-[1.75rem] sm:mt-12 sm:rounded-[2rem] lg:mt-14 lg:rounded-[2.25rem]"
-        >
-          <div className="relative aspect-[16/9] w-full sm:aspect-[2/1] lg:aspect-[2.2/1]">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.75,
+          delay: 0.15,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="relative z-10 mx-auto mt-[calc((6rem+6vh)*0.5)] max-w-[1400px] px-6 sm:px-10 lg:px-16"
+      >
+        <div className="relative overflow-hidden rounded-xl">
+          <div className="relative w-full pb-[50%]">
             <Image
-              src={office}
-              alt="Maximillian Labs team in the studio"
+              src={heroImage}
+              alt="Maximillian Labs studio"
               fill
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"
+              sizes="(max-width: 768px) 100vw, 1400px"
               className="object-cover"
             />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="absolute bottom-5 right-5 sm:bottom-8 sm:right-8"
+          <Link
+            href="/contact-us"
+            className="absolute bottom-5 right-5 flex h-24 w-24 items-center justify-center rounded-full bg-[#c6f135] text-center text-sm font-normal leading-tight text-black shadow-2xl transition-transform hover:scale-105 sm:bottom-8 sm:right-8 sm:h-28 sm:w-28"
           >
-            <Link
-              href="/contact-us"
-              className="flex h-24 w-24 items-center justify-center rounded-full bg-[#c6f135] text-center text-sm font-normal leading-tight text-black shadow-2xl transition-transform hover:scale-105 sm:h-28 sm:w-28"
-            >
-              Speak To Us
-            </Link>
-          </motion.div>
-        </motion.div>
-      </div>
+            Speak To Us
+          </Link>
+        </div>
+      </motion.div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-[30vw] top-0 bg-gradient-to-b from-black via-black/80 to-transparent"
+      />
     </section>
   );
 }
