@@ -48,7 +48,7 @@ function AnimatedStat({
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col items-center text-center"
     >
-      <p className="bg-gradient-to-r from-[#fe802d] via-[#fe0048] to-[#ac0bd9] bg-clip-text text-[clamp(2.5rem,2rem+5vw,7rem)] font-normal leading-[1.2] text-transparent">
+      <p className="text-[clamp(2.5rem,2rem+5vw,7rem)] font-normal leading-[1.2] text-[#00ffff]">
         {count}
       </p>
       <p className="mt-2 text-base font-normal text-black sm:text-lg">{label}</p>

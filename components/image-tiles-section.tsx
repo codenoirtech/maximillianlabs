@@ -3,15 +3,8 @@
 import Image from "next/image";
 import { media } from "@/lib/brand";
 
-const tiles = [
-  ...media.about.grid,
-  media.mockups.businessCard,
-  media.mockups.site,
-  media.mockups.wayfinder,
-];
-
-const row1 = tiles.slice(0, 5);
-const row2 = tiles.slice(5);
+const row1 = media.tiles.slice(0, 4);
+const row2 = media.tiles.slice(4, 8);
 
 export function ImageTilesSection() {
   return (
