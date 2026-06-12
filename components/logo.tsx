@@ -34,11 +34,13 @@ export function Logo({
       <Image
         src={src}
         alt="Maximillian Labs"
-        width={iconOnly ? 40 : 180}
-        height={iconOnly ? 40 : 48}
+        width={iconOnly ? 40 : 220}
+        height={iconOnly ? 40 : 56}
         className={cn(
           "h-auto w-auto",
-          iconOnly ? "h-8 w-8 md:h-9 md:w-9" : "h-8 md:h-10",
+          iconOnly
+            ? "h-8 w-8 md:h-9 md:w-9"
+            : "h-9 w-auto md:h-11 lg:h-12",
         )}
         priority
       />

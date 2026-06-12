@@ -2,9 +2,127 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { FadeIn } from "@/components/fade-in";
 import { SectionLabel } from "@/components/about/section-label";
 import { media } from "@/lib/brand";
+
+const projects = [
+  {
+    title: "Client Project",
+    tags: ["Web Design", "Coming Soon"],
+    description:
+      "Our first client projects are in progress. This space will showcase bespoke digital work as launches go live.",
+    image: media.local.mockups.site,
+    video: media.features.bespoke,
+    status: "In Progress",
+    offset: false,
+  },
+  {
+    title: "Brand Experience",
+    tags: ["Branding", "Coming Soon"],
+    description:
+      "End-to-end brand and web experiences crafted with aesthetic precision and performance at the core.",
+    image: media.local.mockups.wayfinder,
+    video: media.features.highlyRated,
+    status: "In Progress",
+    offset: true,
+  },
+  {
+    title: "Digital Product",
+    tags: ["Web Development", "Coming Soon"],
+    description:
+      "Interactive, responsive builds engineered for growth — tailored to each partner we work with.",
+    image: media.local.projectShowcase,
+    video: media.features.guaranteed,
+    status: "In Progress",
+    offset: false,
+  },
+  {
+    title: "Your Project",
+    tags: ["Let's Build", "Contact Us"],
+    description:
+      "Be among our first featured launches. We're partnering with visionaries ready to architect their digital legacy.",
+    image: media.local.mockups.businessCard,
+    video: media.features.accredited,
+    status: "Open Slot",
+    offset: true,
+  },
+];
+
+function WorkCard({
+  project,
+}: {
+  project: (typeof projects)[number];
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          void video.play().catch(() => undefined);
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <Link href="/contact-us" className="group block">
+      <figure className="relative aspect-square overflow-hidden rounded-[var(--brand-radius)] bg-[#0a0a0a]">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+          sizes="(max-width: 640px) 100vw, 42vw"
+        />
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="none"
+          className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        >
+          <source src={project.video} type="video/mp4" />
+        </video>
+        <ul className="absolute left-4 top-4 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full bg-white/90 px-3 py-1 text-[0.65rem] uppercase tracking-[0.1em] text-[#0a0a0a]"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </figure>
+
+      <div className="mt-5 text-white">
+        <h3 className="text-xl tracking-tight md:text-2xl">{project.title}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-white/70 md:text-base">
+          {project.description}
+        </p>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          <li className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-[0.6rem] leading-tight text-white/70">
+            {project.status}
+          </li>
+        </ul>
+      </div>
+    </Link>
+  );
+}
 
 export function PortfolioSection() {
   return (
@@ -14,49 +132,34 @@ export function PortfolioSection() {
     >
       <div
         aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#00ffff]/10 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
         className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#00ffff]/10 blur-3xl"
       />
 
       <div className="container-wide relative mx-auto max-w-[1400px]">
         <FadeIn>
-          <SectionLabel inverted>Our Work</SectionLabel>
-          <h2 className="mb-8 max-w-xl text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.12] tracking-[-0.02em] md:w-5/12">
-            Projects launching soon
+          <SectionLabel inverted>What we do best</SectionLabel>
+          <h2 className="mb-[max(3rem,9vw)] max-w-xl text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.12] tracking-[-0.02em] md:w-5/12">
+            Creating digital products &amp; experiences
           </h2>
-          <p className="mb-12 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            Maximillian Labs is a newly established agency. We are currently
-            partnering with our first clients and will showcase completed work
-            here as projects go live.
-          </p>
         </FadeIn>
 
-        <FadeIn delay={0.1}>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <figure className="relative aspect-[4/3] overflow-hidden rounded-[var(--brand-radius)] bg-white/5">
-              <Image
-                src={media.projectShowcase}
-                alt="Maximillian Labs project showcase preview"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </figure>
-
-            <div className="space-y-6">
-              <p className="text-base leading-relaxed text-white/75">
-                We engineer for the mission — combining aesthetic precision with
-                raw utility. Every build is bespoke, performance-led, and shaped
-                around the goals of the businesses we serve.
-              </p>
-              <Link
-                href="/contact-us"
-                className="inline-flex h-11 items-center rounded-[var(--brand-radius)] border border-[#00ffff] px-8 text-sm text-[#00ffff] transition-colors hover:bg-[#00ffff]/10"
-              >
-                Be our first featured project
-              </Link>
-            </div>
-          </div>
-        </FadeIn>
+        <div className="flex flex-wrap justify-between gap-x-6 gap-y-12">
+          {projects.map((project, index) => (
+            <FadeIn
+              key={project.title}
+              delay={0.08 + index * 0.06}
+              className={`w-full sm:w-[calc(50%-0.75rem)] lg:w-5/12 ${
+                project.offset ? "lg:mt-16" : ""
+              }`}
+            >
+              <WorkCard project={project} />
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
