@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Global Reach</title>
+  <desc id="desc">World map inspired network illustration showing international reach.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1a2a" />
+      <stop offset="100%" stop-color="#20455f" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)" />
+  <circle cx="600" cy="520" r="360" fill="#ffffff08" stroke="#ffffff22" stroke-width="2" />
+  <ellipse cx="600" cy="520" rx="360" ry="150" fill="none" stroke="#ffffff35" stroke-width="2" />
+  <ellipse cx="600" cy="520" rx="360" ry="80" fill="none" stroke="#ffffff25" stroke-width="2" />
+  <ellipse cx="600" cy="520" rx="220" ry="360" fill="none" stroke="#ffffff25" stroke-width="2" />
+  <ellipse cx="600" cy="520" rx="110" ry="360" fill="none" stroke="#ffffff20" stroke-width="2" />
+  <g fill="#00ffff">
+    <circle cx="300" cy="540" r="10" />
+    <circle cx="480" cy="350" r="10" />
+    <circle cx="640" cy="300" r="10" />
+    <circle cx="830" cy="450" r="10" />
+    <circle cx="760" cy="690" r="10" />
+    <circle cx="530" cy="760" r="10" />
+    <circle cx="360" cy="650" r="10" />
+  </g>
+  <g stroke="#00ffffaa" stroke-width="4" fill="none">
+    <path d="M300 540 L480 350 L640 300 L830 450 L760 690 L530 760 L360 650 Z" />
+    <path d="M300 540 L640 300 L530 760" />
+    <path d="M480 350 L760 690" />
+  </g>
+  <rect x="170" y="880" width="430" height="140" rx="22" fill="#0a0a0a4f" />
+  <text x="210" y="962" fill="#ffffff" font-size="62" font-family="Inter, Arial, sans-serif" letter-spacing="1.2">GLOBAL REACH</text>
+</svg>
