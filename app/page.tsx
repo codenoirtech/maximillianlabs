@@ -7,7 +7,6 @@ import { ImageTilesSection } from "@/components/image-tiles-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProcessSection } from "@/components/process-section";
 import { AwardsTrailsSection } from "@/components/awards-trails-section";
-import { LatestNewsSection } from "@/components/latest-news-section";
 import { FaqSection } from "@/components/faq-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SpeakToUsButton } from "@/components/speak-to-us-button";
@@ -31,7 +30,6 @@ export default function Page() {
       <FeaturesSection />
       <ProcessSection />
       <AwardsTrailsSection />
-      <LatestNewsSection />
       <FaqSection />
       <SiteFooter />
       <SpeakToUsButton />
