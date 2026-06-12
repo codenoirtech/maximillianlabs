@@ -5,37 +5,33 @@ import { SectionLabel } from "@/components/about/section-label";
 
 const differentiators = [
   {
-    title: "Highly Rated",
+    title: "Aesthetic Precision",
     description:
-      "No.1 UK & Europe ranked web agency on Clutch out of 70,000 other agencies. We're proud to be independently one of the best at what we do.",
+      "Every design decision is intentional. We craft arresting visual experiences that communicate your brand with clarity and confidence.",
   },
   {
-    title: "Fully Accredited",
+    title: "Raw Utility",
     description:
-      "We hold quality standard certifications, including ISO and Google Partner, we're a partner you can trust.",
+      "Performance is non-negotiable. Our builds are engineered for speed, accessibility, and measurable business outcomes.",
   },
   {
     title: "Fully Bespoke",
     description:
-      "Everything we do is designed and developed by our team, unique to your requirements – we don't do templates or boring designs.",
+      "No templates, no shortcuts. Everything we create is custom-designed and developed for your specific mission.",
   },
   {
-    title: "Guaranteed Service",
+    title: "Global Standards",
     description:
-      "Our service is fully guaranteed and backed by a warranty, ensuring complete support for every project.",
+      "Based in Nigeria, trusted worldwide. We prove that geography is no barrier to world-class digital craftsmanship.",
   },
 ];
 
 export function AboutDifferentiators() {
   return (
-    <section className="relative overflow-hidden bg-[#151717] px-6 py-[calc(3rem+3vh)] text-white sm:px-10 lg:px-16">
+    <section className="relative overflow-hidden bg-[#0a0a0a] px-6 py-[calc(3rem+3vh)] text-white sm:px-10 lg:px-16">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-[20vw] top-0 h-[70vw] w-[70vw] rounded-full bg-[#fe802d]/20 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-[15vw] bottom-0 h-[55vw] w-[55vw] rounded-full bg-[#ac0bd9]/25 blur-3xl"
+        className="pointer-events-none absolute -right-[15vw] bottom-0 h-[55vw] w-[55vw] rounded-full bg-[#00ffff]/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-[1400px]">
@@ -43,7 +39,7 @@ export function AboutDifferentiators() {
           <div className="w-full lg:ml-[8.333%] lg:w-3/4">
             <SectionLabel inverted>What Makes Us Different</SectionLabel>
             <h2 className="text-balance text-[clamp(1.75rem,3vw+1rem,2.75rem)] font-normal leading-[1.12] tracking-[-0.02em]">
-              What makes us a leading web design agency
+              Precision, quality, and results
             </h2>
           </div>
         </FadeIn>
@@ -56,7 +52,7 @@ export function AboutDifferentiators() {
               className="min-w-[78vw] shrink-0 snap-start sm:min-w-[340px] lg:min-w-0"
             >
               <div className="flex h-full flex-col gap-4 lg:gap-8">
-                <span className="h-2 w-2 rounded-full bg-[#fe0168]" />
+                <span className="h-2 w-2 rounded-full bg-[#00ffff]" />
                 <div>
                   <h3 className="mb-3 text-xl font-normal tracking-tight sm:text-2xl">
                     {item.title}

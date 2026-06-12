@@ -50,14 +50,12 @@
 }
 
 :root {
-  --brand-background: #fafafa;
-  --brand-black: #151717;
-  --brand-red: #fe0048;
-  --brand-pink: #fe0168;
-  --brand-orange: #fe802d;
-  --brand-purple: #ac0bd9;
-  --brand-lime: #c6f135;
-  --brand-gradient: linear-gradient(60deg, #fe802d, #fe0048, #ac0bd9);
+  --brand-background: #f0f0f0;
+  --brand-obsidian: #0a0a0a;
+  --brand-ivory: #f0f0f0;
+  --brand-cyan: #00ffff;
+  --brand-gray: #9d9d9b;
+  --brand-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   --brand-radius: 0.75rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -299,19 +297,11 @@
     pointer-events: none;
   }
 
-  .footer-oval-orange {
+  .footer-oval-cyan {
     background: radial-gradient(
       50% 50% at 50% 50%,
-      #fe6637 0%,
-      rgba(254, 102, 55, 0) 100%
-    );
-  }
-
-  .footer-oval-pink {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      #fe0168 0%,
-      rgba(254, 1, 104, 0) 100%
+      rgba(0, 255, 255, 0.35) 0%,
+      rgba(0, 255, 255, 0) 100%
     );
   }
 

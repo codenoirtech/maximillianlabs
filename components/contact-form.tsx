@@ -9,20 +9,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
 const services = [
-  "Website Design",
-  "E-Commerce",
-  "SEO",
+  "Web Design & Development",
+  "Web Rebuild",
+  "Website Maintenance",
   "Branding",
-  "Site Audit",
-  "Hosting & Support",
-  "Digital Marketing",
-  "GEO/AI Marketing",
 ];
 
 function StepIndicator({ step }: { step: 1 | 2 }) {
   return (
     <div className="relative mb-12 md:mb-16">
-      <div className="h-px w-full bg-[#e91e8c]" />
+      <div className="h-px w-full bg-[#00ffff]" />
       <div
         className={cn(
           "absolute top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white text-sm font-normal text-black md:h-9 md:w-9",
@@ -66,11 +62,11 @@ export function ContactForm() {
     <div className="relative px-6 pb-16 pt-4 md:px-14 md:pb-20 md:pt-6 lg:px-24 lg:pb-24">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-[#5c1038]/35 blur-[100px]"
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-[#00ffff]/10 blur-[100px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/4 h-[360px] w-[360px] rounded-full bg-[#2a1035]/40 blur-[90px]"
+        className="pointer-events-none absolute -right-32 top-1/4 h-[360px] w-[360px] rounded-full bg-[#00ffff]/5 blur-[90px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px]">
@@ -81,7 +77,7 @@ export function ContactForm() {
             <form onSubmit={handleStepOneSubmit} className="space-y-8">
               <div>
                 <div className="mb-5 flex items-center gap-2.5">
-                  <span className="h-2 w-2 rounded-full bg-[#e91e8c]" />
+                  <span className="h-2 w-2 rounded-full bg-[#00ffff]" />
                   <span className="text-sm text-zinc-400">Contact Us</span>
                 </div>
                 <h1 className="max-w-lg text-[2rem] font-normal leading-[1.15] tracking-tight text-white md:text-[2.5rem] lg:text-[2.75rem]">
@@ -211,7 +207,7 @@ export function ContactForm() {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="text-sm font-normal text-[#e91e8c] transition-opacity hover:opacity-70"
+                  className="text-sm font-normal text-[#00ffff] transition-opacity hover:opacity-70"
                 >
                   Return To Previous
                 </button>

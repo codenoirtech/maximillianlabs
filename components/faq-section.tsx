@@ -9,27 +9,27 @@ const faqs = [
   {
     question: "How long does it take to build a website?",
     answer:
-      "A simple brochure-style website might take 6-8 weeks, while a more complex site like an eCommerce store could take 12 weeks or more. The time frame depends on the size, complexity, and specific features you require.",
+      "A simple brochure-style website might take 4–6 weeks, while a more complex site could take 8–12 weeks or more. The timeline depends on the size, complexity, and specific features you require.",
   },
   {
     question: "What is the cost of a web design project?",
     answer:
-      "Our pricing depends on your project requirements, with flexible payments made in phases. Typically, our projects range from £10k to £120k, with an average cost of around £15-20k.",
+      "Our pricing depends on your project requirements, with flexible payments made in phases. Contact us for a free consultation and we'll provide a tailored quote based on your goals.",
   },
   {
     question: "Will I retain full ownership of the design, development, and code?",
     answer:
-      "Yes! Once the project is complete and full payment has been made the website designs and all files will be delivered to you, and full ownership signed over.",
+      "Yes. Once the project is complete and full payment has been made, all website designs and files are delivered to you with full ownership transferred.",
   },
   {
     question: "Will the website be mobile-friendly and responsive?",
     answer:
-      "Absolutely, not just mobile-friendly, but fully mobile-optimised. We design and wireframe the mobile versions of our websites from the start.",
+      "Absolutely. We design and develop mobile-first, ensuring your site works flawlessly across every device and screen size.",
   },
   {
-    question: "Will my website be optimised for search engines?",
+    question: "Do you work with international clients?",
     answer:
-      "Absolutely, this is one of our strengths as an agency. We have a dedicated SEO team involved in every project to ensure the websites we build are fully optimised to rank effectively from the start.",
+      "Yes. While we're based in Nigeria, we serve clients globally. Geography is no barrier to excellence — we collaborate remotely with businesses worldwide.",
   },
 ];
 
@@ -41,12 +41,12 @@ export function FaqSection() {
       <div className="container-wide mx-auto max-w-[1400px]">
         <FadeIn>
           <SectionLabel>FAQ&apos;s</SectionLabel>
-          <h2 className="mb-12 text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.12] tracking-[-0.02em] text-[#151717] lg:mb-16">
+          <h2 className="mb-12 text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.12] tracking-[-0.02em] text-[#0a0a0a] lg:mb-16">
             Frequently Asked Questions
           </h2>
         </FadeIn>
 
-        <div className="mx-auto max-w-3xl divide-y divide-[#151717]/10 border-y border-[#151717]/10">
+        <div className="mx-auto max-w-3xl divide-y divide-[#0a0a0a]/10 border-y border-[#0a0a0a]/10">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -57,7 +57,7 @@ export function FaqSection() {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
                 >
-                  <h3 className="text-lg text-[#151717]">{faq.question}</h3>
+                  <h3 className="text-lg text-[#0a0a0a]">{faq.question}</h3>
                   {isOpen ? (
                     <Minus className="mt-1 h-4 w-4 shrink-0" strokeWidth={1.5} />
                   ) : (
@@ -65,7 +65,7 @@ export function FaqSection() {
                   )}
                 </button>
                 {isOpen ? (
-                  <p className="pb-6 text-base leading-relaxed text-[#151717]/75">
+                  <p className="pb-6 text-base leading-relaxed text-[#0a0a0a]/75">
                     {faq.answer}
                   </p>
                 ) : null}
