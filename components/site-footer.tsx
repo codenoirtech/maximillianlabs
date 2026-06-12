@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { AwardBadge, FooterAwardsMarquee, awardBadges } from "@/components/award-badges";
 import { Logo } from "@/components/logo";
 import {
   FacebookIcon,
@@ -8,17 +9,30 @@ import {
 } from "@/components/social-icons";
 
 const services = [
-  { label: "Web Design & Development", href: "/#services" },
-  { label: "Web Rebuild", href: "/#services" },
+  { label: "Website Design", href: "/#services" },
+  { label: "Branding", href: "/#services" },
+  { label: "Web Development", href: "/#services" },
   { label: "Website Maintenance", href: "/#services" },
-  { label: "Branding", href: "/contact-us" },
+  { label: "Digital Marketing", href: "/contact-us" },
 ];
 
 const quickLinks = [
+  { label: "FAQ's", href: "/#faq" },
   { label: "Contact", href: "/contact-us" },
   { label: "Our Agency", href: "/about" },
   { label: "Our Work", href: "/#work" },
   { label: "Services", href: "/#services" },
+  { label: "Home", href: "/" },
+];
+
+const sectors = [
+  "Startup Website Design",
+  "Ecommerce Website Design",
+  "SaaS & Tech Website Design",
+  "Agency Website Design",
+  "Brand & Portfolio Sites",
+  "Health & Wellbeing Sites",
+  "Enterprise Web Design",
 ];
 
 function FooterLink({
@@ -45,29 +59,38 @@ function FooterHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
+function SectorDot() {
+  return (
+    <span
+      aria-hidden="true"
+      className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#00ffff]"
+    />
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="relative z-25 overflow-hidden bg-[#f0f0f0]">
       <div className="relative overflow-hidden bg-[#0a0a0a] text-white">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="footer-oval footer-oval-cyan bottom left" />
-          <div className="footer-oval footer-oval-cyan top right" />
+          <div className="footer-oval footer-oval-cyan top left" />
+          <div className="footer-oval footer-oval-cyan bottom right" />
         </div>
 
         <div className="relative px-6 pb-16 pt-16 md:px-10 lg:pt-[calc(6rem+6vh)]">
           <div className="container-wide mx-auto max-w-[1400px]">
             <div className="mb-12 lg:mb-16">
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
-                <div className="sm:col-span-2 lg:col-span-4">
+                <div className="sm:col-span-2 lg:col-span-3 xl:col-span-2">
                   <Logo variant="white" />
-                  <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
+                  <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/60">
                     World-class web design and development from Nigeria to the
-                    world. We engineer digital experiences that make businesses
-                    grow.
+                    world.
                   </p>
                 </div>
 
-                <div className="lg:col-span-4">
+                <div className="lg:col-span-3">
                   <FooterHeading>Contact</FooterHeading>
                   <div className="space-y-4 text-[0.9rem] leading-relaxed text-white/70">
                     <p>
@@ -107,7 +130,39 @@ export function SiteFooter() {
                     ))}
                   </ul>
                 </div>
+
+                <div className="sm:col-span-2 lg:col-span-3">
+                  <FooterHeading>Sector Spotlight</FooterHeading>
+                  <ul className="space-y-4 text-[0.9rem] text-white/70">
+                    {sectors.map((item) => (
+                      <li key={item}>
+                        <FooterLink
+                          href="/contact-us"
+                          className="inline-flex items-start gap-4"
+                        >
+                          <SectorDot />
+                          <span>{item}</span>
+                        </FooterLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
+            </div>
+
+            <div className="mb-12 hidden lg:block">
+              <FooterAwardsMarquee />
+            </div>
+
+            <div className="mb-10 flex flex-wrap items-center justify-center gap-4 lg:hidden">
+              {awardBadges.map((badge) => (
+                <AwardBadge
+                  key={badge.key}
+                  logo={badge.logo}
+                  content={badge.content}
+                  variant="dark"
+                />
+              ))}
             </div>
 
             <div className="flex flex-col gap-6 border-t border-white/10 pt-12 lg:flex-row lg:items-center">
@@ -119,6 +174,18 @@ export function SiteFooter() {
               </div>
 
               <div className="flex flex-col gap-4 lg:ml-auto lg:flex-row lg:items-center lg:gap-6">
+                <ul className="flex flex-wrap gap-6 text-[0.8rem] text-white/45">
+                  <li>
+                    <FooterLink href="#">Privacy Policy</FooterLink>
+                  </li>
+                  <li>
+                    <FooterLink href="#">Terms &amp; Conditions</FooterLink>
+                  </li>
+                  <li>
+                    <FooterLink href="#">Cookie Policy</FooterLink>
+                  </li>
+                </ul>
+
                 <ul className="flex items-center gap-4">
                   <li>
                     <Link

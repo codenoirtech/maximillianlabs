@@ -37,7 +37,7 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="overflow-hidden bg-white section-padding">
+    <section id="faq" className="overflow-hidden bg-white section-padding">
       <div className="container-wide mx-auto max-w-[1400px]">
         <FadeIn>
           <SectionLabel>FAQ&apos;s</SectionLabel>

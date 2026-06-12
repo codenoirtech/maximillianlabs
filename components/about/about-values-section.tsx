@@ -3,7 +3,6 @@
 import { FadeIn } from "@/components/fade-in";
 import { SectionLabel } from "@/components/about/section-label";
 import { ValuesAccordion } from "@/components/values-accordion";
-import { AboutStats } from "@/components/about/about-stats";
 
 export function AboutValuesSection() {
   return (
@@ -21,8 +20,6 @@ export function AboutValuesSection() {
             <ValuesAccordion />
           </FadeIn>
         </div>
-
-        {/* <AboutStats /> */}
       </div>
     </section>
   );

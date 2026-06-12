@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { AwardBadge, awardBadges } from "@/components/award-badges";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -19,9 +20,9 @@ export function Hero() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-[clamp(2.75rem,7vw,5.25rem)] leading-[0.95] tracking-[-0.03em] text-[#0a0a0a]"
           >
-            <span className="text-[#00ffff]">Digital Legacies</span>
+            <span className="text-brand-gradient">Digital Legacies</span>
             <br />
-            <span>Built From Nigeria</span>
+            <span style={{ fontWeight: 300 }}>Web Design Agency</span>
           </motion.h1>
 
           <motion.p
@@ -30,16 +31,15 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.08 }}
             className="mx-auto mt-8 max-w-[46rem] text-base leading-relaxed text-[#0a0a0a]/80"
           >
-            At Maximillian Labs, we do not simply build websites; we architect
-            digital legacies. Based in Nigeria and serving a global clientele, we
-            partner with visionaries to forge{" "}
+            We&apos;re Maximillian Labs — a Nigeria-based web design agency,
+            focused on creating bespoke and interactive{" "}
             <Link
               href="/about"
               className="font-normal text-[#0a0a0a] underline decoration-[#00ffff]/50 underline-offset-2"
             >
-              digital experiences
+              web experiences
             </Link>{" "}
-            that are as relentless in performance as they are arresting in design.
+            for aspiring &amp; established businesses worldwide.
           </motion.p>
 
           <motion.div
@@ -56,6 +56,25 @@ export function Hero() {
               <Link href="/contact-us">Start A Project</Link>
             </Button>
           </motion.div>
+        </div>
+      </div>
+
+      <div className="container-wide relative z-20 mx-auto mt-12 max-w-[1400px] md:mt-16">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+          {awardBadges.map((badge, index) => (
+            <motion.div
+              key={badge.key}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.06 }}
+            >
+              <AwardBadge
+                logo={badge.logo}
+                content={badge.content}
+                variant="light"
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
 

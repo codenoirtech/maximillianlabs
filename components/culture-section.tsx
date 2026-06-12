@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import office from '../../../public/images/office.jpg'
+import office from '@/public/images/office.jpg'
 
 export function CultureSection() {
   return (
