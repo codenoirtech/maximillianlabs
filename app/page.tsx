@@ -6,8 +6,6 @@ import { ServicesSection } from "@/components/services-section";
 import { ImageTilesSection } from "@/components/image-tiles-section";
 import { FeaturesSection } from "@/components/features-section";
 import { ProcessSection } from "@/components/process-section";
-import { AwardsTrailsSection } from "@/components/awards-trails-section";
-import { LatestNewsSection } from "@/components/latest-news-section";
 import { FaqSection } from "@/components/faq-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SpeakToUsButton } from "@/components/speak-to-us-button";
@@ -16,12 +14,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Explore Maximillian Labs - a London web design agency delivering bespoke websites, branding, and interactive digital experiences.",
+    "Maximillian Labs — a Nigerian web design agency delivering bespoke websites, branding, and digital experiences to clients worldwide.",
 };
 
 export default function Page() {
   return (
-    <main className="w-full bg-[#fafafa]">
+    <main className="w-full bg-[#f0f0f0]">
       <Navbar />
       <Hero />
       <AboutSection />
@@ -30,8 +28,6 @@ export default function Page() {
       <ImageTilesSection />
       <FeaturesSection />
       <ProcessSection />
-      <AwardsTrailsSection />
-      <LatestNewsSection />
       <FaqSection />
       <SiteFooter />
       <SpeakToUsButton />
