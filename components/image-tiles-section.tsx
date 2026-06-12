@@ -3,12 +3,19 @@
 import Image from "next/image";
 import { media } from "@/lib/brand";
 
-const row1 = media.team.slice(0, 4);
-const row2 = media.team.slice(4, 8);
+const tiles = [
+  ...media.about.grid,
+  media.mockups.businessCard,
+  media.mockups.site,
+  media.mockups.wayfinder,
+];
+
+const row1 = tiles.slice(0, 5);
+const row2 = tiles.slice(5);
 
 export function ImageTilesSection() {
   return (
-    <section className="relative h-[50vmax] overflow-hidden bg-[#fafafa]">
+    <section className="relative h-[50vmax] overflow-hidden bg-[#f0f0f0]">
       <div className="absolute left-1/2 top-1/2 h-[180%] w-[150%] -translate-x-1/2 -translate-y-1/2 rotate-[22.5deg]">
         <div className="flex translate-x-[10%] justify-center gap-4 animate-[scroll-left_40s_linear_infinite]">
           {row1.map((src) => (
