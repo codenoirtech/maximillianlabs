@@ -19,7 +19,7 @@ export function SectionLabel({
         className,
       )}
     >
-      <span className="h-2 w-2 shrink-0 rounded-full bg-[#fe0168]" />
+      <span className="h-2 w-2 shrink-0 rounded-full bg-[#00ffff]" />
       <span>{children}</span>
     </div>
   );

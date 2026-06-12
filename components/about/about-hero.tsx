@@ -7,8 +7,8 @@ import heroImage from "@/public/images/about/grid-hero.png";
 
 export function AboutHero() {
   return (
-    <section className="relative z-[2] overflow-hidden bg-black pb-0 text-white">
-      <div className="pointer-events-none absolute inset-0 bg-black" />
+    <section className="relative z-[2] overflow-hidden bg-[#0a0a0a] pb-0 text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[#0a0a0a]" />
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 pt-[calc(3rem+3vh)] sm:px-10 lg:px-16">
         <motion.div
@@ -18,10 +18,11 @@ export function AboutHero() {
           className="w-full sm:w-3/4 md:w-1/2"
         >
           <h1 className="mb-6 text-[clamp(2.75rem,6vw+1rem,5.5rem)] font-normal leading-[1.05] tracking-[-0.02em]">
-            Be More Creative
+            Architecting Digital Legacies
           </h1>
           <p className="text-base leading-relaxed text-white/90 sm:text-lg">
-            We&apos;re Maximillian Labs an award winning web design agency.
+            We&apos;re Maximillian Labs — a Nigerian web design agency serving a
+            global clientele with precision, quality, and results.
           </p>
         </motion.div>
       </div>
@@ -50,7 +51,7 @@ export function AboutHero() {
 
           <Link
             href="/contact-us"
-            className="absolute bottom-5 right-5 flex h-24 w-24 items-center justify-center rounded-full bg-[#c6f135] text-center text-sm font-normal leading-tight text-black shadow-2xl transition-transform hover:scale-105 sm:bottom-8 sm:right-8 sm:h-28 sm:w-28"
+            className="absolute bottom-5 right-5 flex h-24 w-24 items-center justify-center rounded-full bg-[#00ffff] text-center text-sm font-normal leading-tight text-[#0a0a0a] shadow-2xl transition-transform hover:scale-105 sm:bottom-8 sm:right-8 sm:h-28 sm:w-28"
           >
             Speak To Us
           </Link>
@@ -59,7 +60,7 @@ export function AboutHero() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[30vw] top-0 bg-gradient-to-b from-black via-black/80 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-[30vw] top-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"
       />
     </section>
   );

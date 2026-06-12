@@ -8,23 +8,18 @@ import { AboutImageGrid } from "@/components/about/about-image-grid";
 import { AboutDifferentiators } from "@/components/about/about-differentiators";
 import { AboutValuesSection } from "@/components/about/about-values-section";
 import { AboutCulture } from "@/components/about/about-culture";
-import { AboutInternational } from "@/components/about/about-international";
-import { AboutAwards } from "@/components/about/about-awards";
-import { AboutTeam } from "@/components/about/about-team";
-import { AboutLatestWork } from "@/components/about/about-latest-work";
-import { AboutCareers } from "@/components/about/about-careers";
 
 export const metadata: Metadata = {
   title: "Our Agency",
   description:
-    "Learn about Maximillian Labs — an award-winning London web design agency delivering bespoke digital experiences since 2013.",
+    "Learn about Maximillian Labs — a Nigerian web design agency delivering world-class digital experiences to clients worldwide.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "Our Agency | Maximillian Labs",
     description:
-      "Discover the team, values, and culture behind Maximillian Labs — a leading bespoke web design agency.",
+      "Discover the values and philosophy behind Maximillian Labs — precision, quality, and results from Nigeria to the world.",
     url: "/about",
   },
 };
@@ -32,7 +27,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="w-full">
-      <div className="bg-black">
+      <div className="bg-[#0a0a0a]">
         <Navbar variant="dark" />
       </div>
 
@@ -41,12 +36,7 @@ export default function AboutPage() {
       <AboutImageGrid />
       <AboutDifferentiators />
       <AboutValuesSection />
-      {/* <AboutInternational /> */}
-      {/* <AboutAwards /> */}
-      {/* <AboutTeam /> */}
       <AboutCulture />
-      {/* <AboutLatestWork /> */}
-      {/* <AboutCareers /> */}
 
       <SiteFooter />
       <SpeakToUsButton />
