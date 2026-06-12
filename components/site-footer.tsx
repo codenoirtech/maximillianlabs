@@ -174,6 +174,18 @@ export function SiteFooter() {
               </div>
 
               <div className="flex flex-col gap-4 lg:ml-auto lg:flex-row lg:items-center lg:gap-6">
+                <ul className="flex flex-wrap gap-6 text-[0.8rem] text-white/45">
+                  <li>
+                    <FooterLink href="#">Privacy Policy</FooterLink>
+                  </li>
+                  <li>
+                    <FooterLink href="#">Terms &amp; Conditions</FooterLink>
+                  </li>
+                  <li>
+                    <FooterLink href="#">Cookie Policy</FooterLink>
+                  </li>
+                </ul>
+
                 <ul className="flex items-center gap-4">
                   <li>
                     <Link

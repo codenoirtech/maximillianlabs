@@ -174,14 +174,14 @@ function ProcessNavToggle({
         type="button"
         onClick={onClick}
         className={`relative text-sm font-bold transition-colors ${
-          active ? "text-[#151717]" : "text-[#151717]/40"
+          active ? "text-[#0a0a0a]" : "text-[#0a0a0a]/40"
         }`}
       >
         {label}
         {active ? (
           <span
             aria-hidden="true"
-            className="absolute -bottom-2 left-0 h-0.5 w-full bg-[#fe0168]"
+            className="absolute -bottom-2 left-0 h-0.5 w-full bg-[#00ffff]"
           />
         ) : null}
       </button>
@@ -340,11 +340,11 @@ export function ProcessSection() {
   }
 
   return (
-    <section ref={sectionRef} className="bg-[#fafafa] section-padding">
+    <section ref={sectionRef} className="bg-[#f0f0f0] section-padding">
       <div className="container-wide mx-auto max-w-[1400px]">
         <div className="mb-12 lg:mb-16">
           <SectionLabel>What We Do Best</SectionLabel>
-          <h2 className="text-[clamp(1.75rem,3vw+1rem,3rem)] leading-[1.12] tracking-[-0.02em] text-[#151717]">
+          <h2 className="text-[clamp(1.75rem,3vw+1rem,3rem)] leading-[1.12] tracking-[-0.02em] text-[#0a0a0a]">
             Our Process
           </h2>
         </div>
@@ -374,13 +374,13 @@ export function ProcessSection() {
                     </figure>
 
                     <div className="mb-10">
-                      <p className="mb-2 text-base text-[#151717]/50">
+                      <p className="mb-2 text-base text-[#0a0a0a]/50">
                         {phase.number}
                       </p>
-                      <h3 className="flex items-center gap-4 text-3xl tracking-tight text-[#151717] md:text-4xl">
+                      <h3 className="flex items-center gap-4 text-3xl tracking-tight text-[#0a0a0a] md:text-4xl">
                         <span
                           aria-hidden="true"
-                          className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#fe0168]"
+                          className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#00ffff]"
                         />
                         {phase.title}
                       </h3>
@@ -407,7 +407,7 @@ export function ProcessSection() {
                               : "pointer-events-none opacity-0"
                           }`}
                         >
-                          <p className="max-w-xl text-base leading-relaxed text-[#151717]/75 md:text-lg md:leading-8">
+                          <p className="max-w-xl text-base leading-relaxed text-[#0a0a0a]/75 md:text-lg md:leading-8">
                             {step.content}
                           </p>
                         </div>
@@ -427,7 +427,7 @@ export function ProcessSection() {
               ref={galleryRef}
               className="relative flex min-h-[60vh] max-h-[60vh] items-center"
             >
-              <div className="relative w-full flex-grow overflow-hidden rounded-[1.5rem] bg-[#151717]">
+              <div className="relative w-full flex-grow overflow-hidden rounded-[1.5rem] bg-[#0a0a0a]">
                 <div className="gallery-medias relative aspect-[4/3] w-full">
                   {phases.map((phase, index) => (
                     <figure
