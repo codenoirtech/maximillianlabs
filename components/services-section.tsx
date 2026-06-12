@@ -33,7 +33,7 @@ const services: Service[] = [
       {
         title: "Fully Bespoke Web Design",
         paragraphs: [
-          "Our London based web design team creates websites tailored to your specific needs with zero templates, site builders, or boring designs!",
+          "Our Nigeria-based design team creates websites tailored to your specific needs with zero templates, site builders, or boring designs!",
           "We focus on delivering a custom-built website that's fully aligned with your goals and reflects your brands uniqueness.",
         ],
       },
@@ -79,7 +79,7 @@ const services: Service[] = [
     title: ["Branding"],
     cta: "Branding",
     description: [
-      "Our talented London-based web design team includes highly experienced graphic designers who specialise in creating stunning brand identities that truly capture the essence of your business.",
+      "Our talented design team includes experienced graphic designers who specialise in creating stunning brand identities that truly capture the essence of your business.",
       "Let us guide you in building a strong, authentic brand foundation that truly connects with your audience and sets you apart.",
     ],
     features: [
@@ -117,7 +117,7 @@ const services: Service[] = [
     title: ["Digital", "Marketing"],
     cta: "Digital Marketing & SEO",
     description: [
-      "As a Google certified web design agency, we provide complete SEO and digital marketing solutions, all managed in-house by our dedicated account managers.",
+      "We provide complete SEO and digital marketing solutions, all managed in-house by our dedicated team.",
       "We're focused on delivering measurable ROI, ensuring your business reaches the right audience, stands out, and drives meaningful growth.",
     ],
     features: [
@@ -223,7 +223,7 @@ function FeatureAccordion({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <dl className="mt-12 divide-y divide-[#151717]/10 border-t border-[#151717]/10">
+    <dl className="mt-12 divide-y divide-[#0a0a0a]/10 border-t border-[#0a0a0a]/10">
       {features.map((feature, index) => {
         const isOpen = openIndex === index;
         return (
@@ -235,7 +235,7 @@ function FeatureAccordion({
                 onClick={() => setOpenIndex(isOpen ? null : index)}
                 aria-expanded={isOpen}
               >
-                <h4 className="text-lg text-[#151717]">{feature.title}</h4>
+                <h4 className="text-lg text-[#0a0a0a]">{feature.title}</h4>
                 {isOpen ? (
                   <Minus className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                 ) : (
@@ -245,7 +245,7 @@ function FeatureAccordion({
             </dt>
             {isOpen ? (
               <dd className="pb-5">
-                <div className="space-y-4 text-sm leading-relaxed text-[#151717]/75">
+                <div className="space-y-4 text-sm leading-relaxed text-[#0a0a0a]/75">
                   {feature.paragraphs.map((p) => (
                     <p key={p.slice(0, 40)}>{p}</p>
                   ))}
@@ -285,10 +285,10 @@ function ServiceBlock({
           <h2
             className={`text-[clamp(2.5rem,5vw,4rem)] leading-none tracking-[-0.03em] transition-colors duration-500 ${
               isActive
-                ? "text-[#151717]"
+                ? "text-[#0a0a0a]"
                 : isPast
-                  ? "text-[#151717]/20"
-                  : "text-[#151717]/25"
+                  ? "text-[#0a0a0a]/20"
+                  : "text-[#0a0a0a]/25"
             }`}
           >
             {service.title.map((line) => (
@@ -304,7 +304,7 @@ function ServiceBlock({
         <ServiceVideo src={service.video} poster={service.poster} />
 
         {service.description.length > 0 ? (
-          <div className="mt-8 space-y-5 text-base leading-relaxed text-[#151717]/80">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-[#0a0a0a]/80">
             {service.description.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
@@ -313,7 +313,7 @@ function ServiceBlock({
 
         <Link
           href="/contact-us"
-          className="mt-6 inline-flex h-11 items-center rounded-[var(--brand-radius)] border border-[#151717] px-6 text-sm text-[#151717] transition-colors hover:bg-[#151717]/5"
+          className="mt-6 inline-flex h-11 items-center rounded-[var(--brand-radius)] border border-[#0a0a0a] px-6 text-sm text-[#0a0a0a] transition-colors hover:bg-[#0a0a0a]/5"
         >
           {service.cta}
         </Link>

@@ -16,16 +16,20 @@ import { brand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
+  { label: "Our Work", href: "/#work" },
   { label: "Our Agency", href: "/about" },
   { label: "Services", href: "/#services", submenu: true },
   { label: "Contact", href: "/contact-us" },
 ];
 
 const serviceItems = [
-  { label: "Web Design & Development", href: "/#services" },
-  { label: "Web Rebuild", href: "/#services" },
-  { label: "Website Maintenance", href: "/#services" },
-  { label: "Branding", href: "/contact-us" },
+  { label: "Website Design", href: "/#services" },
+  { label: "Branding", href: "/#services" },
+  { label: "Digital Marketing & SEO", href: "/#services" },
+  { label: "Ecommerce", href: "/#services" },
+  { label: "Website Support & Hosting", href: "/#services" },
+  { label: "Website Audit", href: "/contact-us" },
+  { label: "Web Development", href: "/#services" },
 ];
 
 function MenuIcon({ className }: { className?: string }) {
@@ -221,7 +225,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
         )}
       >
         <header className="relative mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-6 md:px-10 md:py-8">
-          <Logo variant={isDark ? "white" : "primary"} />
+          <Logo variant={isDark ? "white" : "black"} />
 
           <div className="flex items-center gap-4 md:gap-5">
             <Button

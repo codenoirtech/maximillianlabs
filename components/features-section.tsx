@@ -179,11 +179,11 @@ export function FeaturesSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#fafafa] section-padding">
+    <section ref={sectionRef} className="bg-[#f0f0f0] section-padding">
       <div className="container-wide mx-auto max-w-[1400px]">
         <div className="mb-12 lg:mb-16 lg:w-10/12">
           <SectionLabel>Why Maximillian Labs</SectionLabel>
-          <h2 className="text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.12] tracking-[-0.02em] text-[#151717]">
+          <h2 className="text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.12] tracking-[-0.02em] text-[#0a0a0a]">
             What makes us different?
           </h2>
         </div>
@@ -203,15 +203,15 @@ export function FeaturesSection() {
                         href={`#${feature.id}`}
                         className={`inline-flex items-center gap-3 text-base transition-colors ${
                           isActive
-                            ? "text-[#151717]"
-                            : "text-[#151717]/35 hover:text-[#151717]/60"
+                            ? "text-[#0a0a0a]"
+                            : "text-[#0a0a0a]/35 hover:text-[#0a0a0a]/60"
                         }`}
                       >
                         <span>{feature.title}</span>
                         {isActive ? (
                           <span
                             aria-hidden="true"
-                            className="h-px w-10 shrink-0 bg-[#151717]"
+                            className="h-px w-10 shrink-0 bg-[#0a0a0a]"
                           />
                         ) : null}
                       </a>
@@ -230,14 +230,14 @@ export function FeaturesSection() {
                     <article
                       key={feature.id}
                       id={feature.id}
-                      className="feature-card relative mb-4 flex min-h-[calc(100vh-92px-4rem)] min-h-[calc(100svh-92px-4rem)] flex-col overflow-hidden rounded-[1.5rem] bg-[#fafafa] shadow-[0_0.25rem_3.5rem_rgba(0,0,0,0.1)] sm:flex-row-reverse lg:min-h-0 lg:rounded-[2rem]"
+                      className="feature-card relative mb-4 flex min-h-[calc(100vh-92px-4rem)] min-h-[calc(100svh-92px-4rem)] flex-col overflow-hidden rounded-[1.5rem] bg-[#f0f0f0] shadow-[0_0.25rem_3.5rem_rgba(0,0,0,0.1)] sm:flex-row-reverse lg:min-h-0 lg:rounded-[2rem]"
                     >
                       <div className="flex w-full items-center p-6 sm:w-1/2 sm:p-[clamp(2rem,15vh,6rem)] sm:px-[20%] lg:min-h-[60vh]">
                         <div>
-                          <h3 className="text-2xl tracking-tight text-[#151717] md:text-3xl">
+                          <h3 className="text-2xl tracking-tight text-[#0a0a0a] md:text-3xl">
                             {feature.title}
                           </h3>
-                          <p className="mt-4 text-sm leading-relaxed text-[#151717]/75 md:text-base">
+                          <p className="mt-4 text-sm leading-relaxed text-[#0a0a0a]/75 md:text-base">
                             {feature.description}
                           </p>
                         </div>
