@@ -7,24 +7,23 @@ import { SectionLabel } from "@/components/about/section-label";
 import cultureWide from "@/public/images/about/grid-3.webp";
 import cultureTall from "@/public/images/about/grid-5.webp";
 
-const benefits = [
-  "Creative yet professional approach",
-  "Flexible working",
-  "Remote working",
-  "Work from anywhere (our team operates globally)",
-  "Team celebratory meal/drinks on your birthday (if it's on a weekday)",
-  "Snacks/drinks on tap for in-office staff",
+const values = [
+  "Mission-driven approach to every project",
+  "Collaborative partnership with clients",
+  "Remote-first, globally connected team",
+  "Commitment to quality and precision",
+  "Continuous learning and evolution",
 ];
 
 export function AboutCulture() {
   return (
-    <section className="overflow-hidden bg-[#fafafa] px-6 py-[calc(3rem+3vh)] sm:px-10 lg:px-16">
+    <section className="overflow-hidden bg-[#f0f0f0] px-6 py-[calc(3rem+3vh)] sm:px-10 lg:px-16">
       <div className="mx-auto max-w-[1400px]">
         <FadeIn>
           <div className="w-full sm:w-2/3">
-            <SectionLabel>Be More Creative</SectionLabel>
-            <h2 className="text-balance text-[clamp(1.75rem,3vw+1rem,2.75rem)] font-normal leading-[1.12] tracking-[-0.02em] text-black">
-              A Culture Driven by Creativity
+            <SectionLabel>Our Philosophy</SectionLabel>
+            <h2 className="text-balance text-[clamp(1.75rem,3vw+1rem,2.75rem)] font-normal leading-[1.12] tracking-[-0.02em] text-[#0a0a0a]">
+              We don&apos;t just create for the eye — we engineer for the mission
             </h2>
           </div>
         </FadeIn>
@@ -40,7 +39,7 @@ export function AboutCulture() {
             >
               <Image
                 src={cultureWide}
-                alt="Team collaboration"
+                alt="Creative collaboration"
                 fill
                 sizes="(max-width: 1024px) 80vw, 40vw"
                 className="object-cover"
@@ -55,7 +54,7 @@ export function AboutCulture() {
             >
               <Image
                 src={cultureTall}
-                alt="Creative workspace"
+                alt="Design workspace"
                 fill
                 sizes="(max-width: 1024px) 70vw, 35vw"
                 className="object-cover"
@@ -65,25 +64,22 @@ export function AboutCulture() {
 
           <FadeIn delay={0.12}>
             <div className="space-y-8">
-              <p className="text-base leading-relaxed text-black/80 sm:text-lg">
-                We pride ourselves on promoting a supportive environment,
-                celebrating every success that comes our way. Our creative &amp;
-                professional ethos encourages flexibility, so you can work from
-                anywhere as part of our globally connected team. If your birthday
-                falls on a weekday, we&apos;ll toast the occasion with a
-                celebratory meal or drinks, and for those in the office, there
-                are always snacks and refreshments on hand.
+              <p className="text-base leading-relaxed text-[#0a0a0a]/80 sm:text-lg">
+                Our philosophy transcends the surface level. We operate at the
+                intersection of aesthetic precision and raw utility, partnering
+                with businesses that demand both beauty and performance from
+                their digital presence.
               </p>
 
               <div>
-                <p className="mb-4 text-sm font-normal tracking-wide text-black/60 uppercase">
-                  Team Benefits:
+                <p className="mb-4 text-sm font-normal tracking-wide text-[#0a0a0a]/60 uppercase">
+                  How we work:
                 </p>
-                <ul className="space-y-2.5 text-sm leading-relaxed text-black/80 sm:text-base">
-                  {benefits.map((benefit) => (
-                    <li key={benefit} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#fe0168]" />
-                      <span>{benefit}</span>
+                <ul className="space-y-2.5 text-sm leading-relaxed text-[#0a0a0a]/80 sm:text-base">
+                  {values.map((value) => (
+                    <li key={value} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00ffff]" />
+                      <span>{value}</span>
                     </li>
                   ))}
                 </ul>
