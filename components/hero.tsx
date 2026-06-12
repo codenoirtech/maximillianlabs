@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { AwardBadge, awardBadges } from "@/components/award-badges";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -56,25 +55,6 @@ export function Hero() {
               <Link href="/contact-us">Start A Project</Link>
             </Button>
           </motion.div>
-        </div>
-      </div>
-
-      <div className="container-wide relative z-20 mx-auto mt-12 max-w-[1400px] md:mt-16">
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-          {awardBadges.map((badge, index) => (
-            <motion.div
-              key={badge.key}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.06 }}
-            >
-              <AwardBadge
-                logo={badge.logo}
-                content={badge.content}
-                variant="light"
-              />
-            </motion.div>
-          ))}
         </div>
       </div>
 

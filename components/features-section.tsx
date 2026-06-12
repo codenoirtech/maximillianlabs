@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionLabel } from "@/components/about/section-label";
-import { media } from "@/lib/brand";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,29 +13,33 @@ const features = [
     id: "highly-rated",
     title: "Aesthetic Precision",
     description:
-      "Every design decision is intentional. We craft arresting visual experiences that capture attention and communicate your brand with clarity and confidence.",
-    video: media.features.highlyRated,
+      "Every visual choice is purposeful. We shape refined interfaces that reflect your brand and create an immediate, memorable first impression.",
+    image: "/images/features/aesthetic-precision.svg",
+    imageAlt: "Abstract composition representing aesthetic precision",
   },
   {
     id: "fully-accredited",
-    title: "Raw Utility",
+    title: "Performance Driven",
     description:
-      "Beautiful means nothing without performance. Our builds are engineered for speed, accessibility, and measurable business results.",
-    video: media.features.accredited,
+      "Fast, responsive, and reliable by default. We build digital products engineered for accessibility, scalability, and measurable business outcomes.",
+    image: "/images/features/performance-driven.svg",
+    imageAlt: "Dashboard style graphic representing performance metrics",
   },
   {
     id: "fully-bespoke",
     title: "Fully Bespoke",
     description:
-      "Everything we create is custom-designed and developed by our team, tailored specifically to your needs. No templates, no generic designs, just something unique and made for you!",
-    video: media.features.bespoke,
+      "No templates and no shortcuts. Every layout, interaction, and component is custom-crafted around your goals, users, and brand voice.",
+    image: "/images/features/fully-bespoke.svg",
+    imageAlt: "Layered design system mockup representing fully bespoke work",
   },
   {
     id: "guaranteed-service",
-    title: "Guaranteed Service",
+    title: "Global Reach",
     description:
-      "Based in Nigeria, trusted worldwide. We prove that geography is no barrier to world-class web design and development.",
-    video: media.features.guaranteed,
+      "Built for audiences anywhere. We create culturally aware digital experiences that help brands scale confidently across markets.",
+    image: "/images/features/global-reach.svg",
+    imageAlt: "Connected world illustration representing global reach",
   },
 ];
 
@@ -43,33 +47,6 @@ function getHeaderHeight() {
   const header = document.querySelector("header");
   const sticky = header?.parentElement;
   return sticky?.clientHeight ?? header?.clientHeight ?? 92;
-}
-
-function FeatureVideo({ src, active }: { src: string; active: boolean }) {
-  const ref = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = ref.current;
-    if (!video) return;
-    if (active) void video.play().catch(() => undefined);
-    else {
-      video.pause();
-      video.currentTime = 0;
-    }
-  }, [active]);
-
-  return (
-    <video
-      ref={ref}
-      muted
-      loop
-      playsInline
-      preload="none"
-      className="aspect-square h-full w-full object-cover"
-    >
-      <source src={src} type="video/mp4" />
-    </video>
-  );
 }
 
 export function FeaturesSection() {
@@ -243,7 +220,17 @@ export function FeaturesSection() {
                         </div>
                       </div>
                       <div className="w-full sm:w-1/2">
-                        <FeatureVideo src={feature.video} active={isActive} />
+                        <Image
+                          src={feature.image}
+                          alt={feature.imageAlt}
+                          width={900}
+                          height={900}
+                          className={`aspect-square h-full w-full object-cover transition-transform duration-500 ${
+                            isActive ? "scale-[1.01]" : "scale-100"
+                          }`}
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                          priority={index === 0}
+                        />
                       </div>
                     </article>
                   );

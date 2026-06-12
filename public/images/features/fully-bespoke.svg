@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Fully Bespoke</title>
+  <desc id="desc">Layered interface cards and component blocks implying custom crafted design.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161616" />
+      <stop offset="100%" stop-color="#243245" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)" />
+  <rect x="120" y="140" width="640" height="860" rx="28" fill="#ffffff0e" stroke="#ffffff2a" />
+  <rect x="170" y="210" width="300" height="180" rx="18" fill="#00ffff26" />
+  <rect x="500" y="210" width="210" height="180" rx="18" fill="#ffffff18" />
+  <rect x="170" y="430" width="540" height="110" rx="14" fill="#ffffff1e" />
+  <rect x="170" y="570" width="170" height="170" rx="14" fill="#ffffff1a" />
+  <rect x="360" y="570" width="170" height="170" rx="14" fill="#00ffff20" />
+  <rect x="550" y="570" width="160" height="170" rx="14" fill="#ffffff18" />
+  <rect x="170" y="770" width="540" height="170" rx="18" fill="#ffffff12" />
+  <g transform="translate(700 300) rotate(-8)">
+    <rect x="0" y="0" width="360" height="500" rx="24" fill="#ffffff15" stroke="#ffffff40" />
+    <rect x="40" y="50" width="280" height="220" rx="16" fill="#00ffff2f" />
+    <rect x="40" y="300" width="180" height="14" rx="7" fill="#ffffff80" />
+    <rect x="40" y="332" width="260" height="10" rx="5" fill="#ffffff50" />
+    <rect x="40" y="358" width="220" height="10" rx="5" fill="#ffffff30" />
+  </g>
+  <text x="140" y="1080" fill="#ffffff" font-size="64" font-family="Inter, Arial, sans-serif" letter-spacing="1.3">FULLY BESPOKE</text>
+</svg>
