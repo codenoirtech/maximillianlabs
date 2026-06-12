@@ -6,43 +6,27 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, ChevronLeft, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
 } from "@/components/social-icons";
+import { brand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
-  { label: "Our Work", href: "#" },
   { label: "Our Agency", href: "/about" },
-  { label: "Services", href: "#", submenu: true },
-  { label: "Blog", href: "#" },
-  { label: "SEO Checker", href: "#" },
-  { label: "Cost Guide", href: "#" },
+  { label: "Services", href: "/#services", submenu: true },
   { label: "Contact", href: "/contact-us" },
 ];
 
 const serviceItems = [
-  { label: "Website Design", href: "#" },
-  { label: "SEO & Digital Marketing", href: "#" },
-  { label: "GEO", href: "#" },
-  { label: "Hosting & Website Support", href: "#" },
-  { label: "Branding", href: "#" },
-  { label: "Website Audit", href: "#" },
-  { label: "Ecommerce", href: "#" },
+  { label: "Web Design & Development", href: "/#services" },
+  { label: "Web Rebuild", href: "/#services" },
+  { label: "Website Maintenance", href: "/#services" },
+  { label: "Branding", href: "/contact-us" },
 ];
-
-const accentColor = "#e91e8c";
-
-function Logo({ className }: { className?: string }) {
-  return (
-    <Link href="/" className={cn("inline-flex items-baseline gap-0.5", className)}>
-      <span className="text-xl font-normal tracking-tight md:text-2xl">maximillianlabs</span>
-      <span className="text-xl font-normal text-[#e63946] md:text-2xl">.</span>
-    </Link>
-  );
-}
 
 function MenuIcon({ className }: { className?: string }) {
   return (
@@ -76,11 +60,6 @@ function ContactSidebar({ onClose }: { onClose: () => void }) {
       transition={{ duration: 0.45, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       className="space-y-8 md:space-y-10 lg:pt-1"
     >
-      <div>
-        <p className="mb-2 text-sm text-white/80">Phone</p>
-        <p className="text-lg font-normal text-white md:text-xl">(+44) 0207 870 5794</p>
-      </div>
-
       <div>
         <p className="mb-2 text-sm text-white/80">E-Mail</p>
         <p className="text-lg font-normal break-words text-white md:text-xl">
@@ -117,10 +96,11 @@ function ContactSidebar({ onClose }: { onClose: () => void }) {
 
       <Button
         variant="outline"
+        asChild
         onClick={onClose}
         className="h-11 rounded-md border border-white bg-transparent px-6 text-sm font-normal text-white shadow-none"
       >
-        Start A Project
+        <Link href="/contact-us">Start A Project</Link>
       </Button>
     </motion.div>
   );
@@ -145,7 +125,8 @@ function MenuNavItem({
     <>
       <motion.span
         aria-hidden="true"
-        className="h-px shrink-0 bg-[#e91e8c]"
+        className="h-px shrink-0"
+        style={{ backgroundColor: brand.colors.cyan }}
         initial={false}
         animate={{
           width: isActive ? 40 : 0,
@@ -156,7 +137,7 @@ function MenuNavItem({
       />
       <motion.span
         initial={false}
-        animate={{ color: isActive ? accentColor : "#ffffff" }}
+        animate={{ color: isActive ? brand.colors.cyan : "#ffffff" }}
         transition={{ duration: 0.25 }}
         className="text-2xl font-normal tracking-tight md:text-3xl lg:text-[2rem] lg:leading-tight"
       >
@@ -235,14 +216,12 @@ export function Navbar({ variant = "light" }: NavbarProps) {
         className={cn(
           "sticky top-0 z-40 w-full",
           isDark
-            ? "bg-[#080808]/90 backdrop-blur-md"
-            : "bg-[#f4f4f5]/90 backdrop-blur-md",
+            ? "bg-[#0a0a0a]/90 backdrop-blur-md"
+            : "bg-[#f0f0f0]/80 backdrop-blur-[30px]",
         )}
       >
         <header className="relative mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-6 md:px-10 md:py-8">
-          <Logo
-            className={cn(isDark && "[&_span:first-child]:text-white")}
-          />
+          <Logo variant={isDark ? "white" : "primary"} />
 
           <div className="flex items-center gap-4 md:gap-5">
             <Button
@@ -252,25 +231,25 @@ export function Navbar({ variant = "light" }: NavbarProps) {
                 "h-10 rounded-md border bg-transparent px-5 text-sm font-normal shadow-none md:h-11 md:px-6",
                 isDark
                   ? "border-white text-white hover:bg-white/10"
-                  : "border-black text-black hover:bg-black/5",
+                  : "border-[#0a0a0a] text-[#0a0a0a] hover:bg-[#0a0a0a]/5",
               )}
             >
               <Link href="/contact-us">Start A Project</Link>
             </Button>
 
-          <button
-            type="button"
-            aria-label="Open menu"
-            aria-expanded={isOpen}
-            onClick={openMenu}
-            className={cn(
-              "flex h-10 w-10 items-center justify-center transition-opacity hover:opacity-60",
-              isDark ? "text-white" : "text-black",
-            )}
-          >
-            <MenuIcon />
-          </button>
-        </div>
+            <button
+              type="button"
+              aria-label="Open menu"
+              aria-expanded={isOpen}
+              onClick={openMenu}
+              className={cn(
+                "flex h-10 w-10 items-center justify-center transition-opacity hover:opacity-60",
+                isDark ? "text-white" : "text-[#0a0a0a]",
+              )}
+            >
+              <MenuIcon />
+            </button>
+          </div>
         </header>
       </div>
 
@@ -282,7 +261,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-50 bg-[#d4d4d8]"
+            className="fixed inset-0 z-50 bg-[#d9d9d9]"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
@@ -300,7 +279,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="flex items-center justify-between"
               >
-                <Logo className="text-white [&_span:first-child]:text-white" />
+                <Logo variant="white" />
                 <button
                   type="button"
                   aria-label="Close menu"
@@ -323,7 +302,7 @@ export function Navbar({ variant = "light" }: NavbarProps) {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 16, scale: 0.98 }}
                   transition={{ duration: 0.45, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="w-full max-w-6xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1a0a0f] via-[#120812] to-[#2a1035] p-8 shadow-2xl md:rounded-[2.5rem] md:p-12 lg:p-14"
+                  className="w-full max-w-6xl overflow-hidden rounded-[2rem] bg-[#0a0a0a] p-8 shadow-2xl md:rounded-[2.5rem] md:p-12 lg:p-14"
                 >
                   <div className="grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:items-start lg:gap-8 xl:gap-14">
                     <div className="relative min-h-[320px] overflow-hidden">

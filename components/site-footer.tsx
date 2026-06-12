@@ -1,4 +1,6 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
+import { Logo } from "@/components/logo";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -6,165 +8,147 @@ import {
 } from "@/components/social-icons";
 
 const services = [
-  "Website Design",
-  "SEO & Digital Marketing",
-  "Branding",
-  "Hosting",
-  "Website Audit",
+  { label: "Web Design & Development", href: "/#services" },
+  { label: "Web Rebuild", href: "/#services" },
+  { label: "Website Maintenance", href: "/#services" },
+  { label: "Branding", href: "/contact-us" },
 ];
 
 const quickLinks = [
-  "FAQ's",
-  "Contact",
-  "Our Agency",
-  "Our Work",
-  "Sustainability",
-  "Careers",
-  "Web Design London",
+  { label: "Contact", href: "/contact-us" },
+  { label: "Our Agency", href: "/about" },
+  { label: "Our Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
 ];
 
-const sectors = [
-  "Aviation Website Design",
-  "Charity / Non-Profits Web Design",
-  "Construction Website Design",
-  "Education Website Design",
-  "Energy & Environmental",
-  "Fashion Website Design",
-  "Finance Website Design",
-  "SaaS Website Design",
-];
+function FooterLink({
+  href,
+  children,
+  className = "",
+}: {
+  href: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <Link href={href} className={`footer-link ${className}`}>
+      {children}
+    </Link>
+  );
+}
+
+function FooterHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="mb-6 text-[clamp(1.125rem,1rem+0.35vw,1.625rem)] leading-none tracking-[-0.03em] text-white">
+      {children}
+    </h3>
+  );
+}
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-[#0a0a0a] text-white">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#4a1030]/30 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 top-0 h-[400px] w-[400px] rounded-full bg-[#2a1035]/40 blur-3xl"
-      />
-
-      <div className="relative mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
-          <div className="space-y-6 lg:col-span-1">
-            <Link href="/" className="inline-flex items-baseline gap-0.5">
-              <span className="text-2xl font-normal tracking-tight">Maximillian Labs</span>
-              <span className="text-2xl font-normal text-[#e63946]">.</span>
-            </Link>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-sm font-normal">Contact</h3>
-            <div className="space-y-3 text-sm leading-relaxed text-zinc-300">
-              <p className="font-normal text-white">London Office</p>
-              <p>
-                77 New Cavendish Street,
-                <br />
-                Fitzrovia, London,
-                <br />
-                W1W 6XB
-              </p>
-              <Link href="#" className="underline hover:text-white">
-                Directions
-              </Link>
-              <p>
-                <Link
-                  href="mailto:contact@maximillianlabs.com"
-                  className="hover:text-white"
-                >
-                  contact@maximillianlabs.com
-                </Link>
-              </p>
-              <p>(+44) 0207 870 5794</p>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-sm font-normal">Services</h3>
-            <ul className="space-y-2.5 text-sm text-zinc-300">
-              {services.map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-white">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-sm font-normal">Quick Links</h3>
-            <ul className="space-y-2.5 text-sm text-zinc-300">
-              {quickLinks.map((item) => (
-                <li key={item}>
-                  <Link
-                    href={item === "Contact" ? "/contact-us" : "#"}
-                    className="hover:text-white"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-sm font-normal">Sector Spotlight</h3>
-            <ul className="space-y-2.5 text-sm text-zinc-300">
-              {sectors.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#e63946]" />
-                  <Link href="#" className="hover:text-white">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="relative z-25 overflow-hidden bg-[#f0f0f0]">
+      <div className="relative overflow-hidden bg-[#0a0a0a] text-white">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="footer-oval footer-oval-cyan bottom left" />
+          <div className="footer-oval footer-oval-cyan top right" />
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-xl text-xs leading-relaxed text-zinc-500">
-          Maximillian is a trading name of Maximillian Labs Design Ltd © 2025
-          </p>
+        <div className="relative px-6 pb-16 pt-16 md:px-10 lg:pt-[calc(6rem+6vh)]">
+          <div className="container-wide mx-auto max-w-[1400px]">
+            <div className="mb-12 lg:mb-16">
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
+                <div className="sm:col-span-2 lg:col-span-4">
+                  <Logo variant="white" />
+                  <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
+                    World-class web design and development from Nigeria to the
+                    world. We engineer digital experiences that make businesses
+                    grow.
+                  </p>
+                </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
-            <div className="flex flex-wrap gap-4 text-xs text-zinc-400">
-              <Link href="#" className="hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Terms &amp; Conditions
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Cookie Policy
-              </Link>
+                <div className="lg:col-span-4">
+                  <FooterHeading>Contact</FooterHeading>
+                  <div className="space-y-4 text-[0.9rem] leading-relaxed text-white/70">
+                    <p>
+                      Nigeria
+                      <br />
+                      Serving clients globally
+                    </p>
+                    <p>
+                      <FooterLink
+                        href="mailto:contact@maximillianlabs.com"
+                        className="text-white"
+                      >
+                        contact@maximillianlabs.com
+                      </FooterLink>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-2">
+                  <FooterHeading>Services</FooterHeading>
+                  <ul className="space-y-1 text-[0.9rem] text-white/70">
+                    {services.map((item) => (
+                      <li key={item.label}>
+                        <FooterLink href={item.href}>{item.label}</FooterLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="lg:col-span-2">
+                  <FooterHeading>Quick Links</FooterHeading>
+                  <ul className="space-y-1 text-[0.9rem] text-white/70">
+                    {quickLinks.map((item) => (
+                      <li key={item.label}>
+                        <FooterLink href={item.href}>{item.label}</FooterLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <Link
-                href="#"
-                aria-label="LinkedIn"
-                className="text-white transition-opacity hover:opacity-70"
-              >
-                <LinkedinIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Instagram"
-                className="text-white transition-opacity hover:opacity-70"
-              >
-                <InstagramIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Facebook"
-                className="text-white transition-opacity hover:opacity-70"
-              >
-                <FacebookIcon className="h-4 w-4" />
-              </Link>
+            <div className="flex flex-col gap-6 border-t border-white/10 pt-12 lg:flex-row lg:items-center">
+              <div className="text-[0.8rem] leading-relaxed text-white/45">
+                <p>
+                  © {new Date().getFullYear()} Maximillian Labs. All rights
+                  reserved.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4 lg:ml-auto lg:flex-row lg:items-center lg:gap-6">
+                <ul className="flex items-center gap-4">
+                  <li>
+                    <Link
+                      href="#"
+                      aria-label="LinkedIn"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white transition-opacity hover:opacity-70"
+                    >
+                      <LinkedinIcon className="h-4 w-4" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      aria-label="Instagram"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white transition-opacity hover:opacity-70"
+                    >
+                      <InstagramIcon className="h-4 w-4" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      aria-label="Facebook"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white transition-opacity hover:opacity-70"
+                    >
+                      <FacebookIcon className="h-4 w-4" />
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

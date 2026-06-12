@@ -5,19 +5,19 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Maximillian Labs",
     short_name: "Max Labs",
     description:
-      "Award-winning London web design agency building bespoke digital experiences.",
+      "Nigerian web design agency building bespoke digital experiences for clients worldwide.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f4f4f5",
-    theme_color: "#111111",
+    background_color: "#f0f0f0",
+    theme_color: "#0a0a0a",
     icons: [
       {
-        src: "/icon-light-32x32.png",
+        src: "/icons/icon-black.png",
         sizes: "32x32",
         type: "image/png",
       },
       {
-        src: "/apple-icon.png",
+        src: "/icons/icon-black.png",
         sizes: "180x180",
         type: "image/png",
       },
