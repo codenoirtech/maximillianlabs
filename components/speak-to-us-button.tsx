@@ -92,7 +92,8 @@ export function SpeakToUsButton() {
   return (
     <div
       ref={containerRef}
-      className="fixed bottom-8 right-8 z-50 h-28 w-28"
+      className="fixed bottom-8 right-8 z-50 h-28 w-28 overflow-visible"
+      role="group"
       aria-label="Contact options"
     >
       <AnimatePresence>
@@ -135,12 +136,18 @@ export function SpeakToUsButton() {
         ) : null}
       </AnimatePresence>
 
-      <FabCircle
-        label="Speak To Us"
-        size="main"
+      <button
+        type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="absolute bottom-0 right-0"
-      />
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        className={cn(
+          "absolute bottom-0 right-0 flex h-28 w-28 items-center justify-center rounded-full text-center text-sm font-normal shadow-2xl transition-transform hover:scale-105",
+        )}
+        style={{ backgroundColor: fabColor, color: fabTextColor }}
+      >
+        Speak To Us
+      </button>
     </div>
   );
 }
