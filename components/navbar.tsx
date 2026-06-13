@@ -18,18 +18,18 @@ import { cn } from "@/lib/utils";
 const menuItems = [
   { label: "Our Work", href: "/#work" },
   { label: "Our Agency", href: "/about" },
-  { label: "Services", href: "/#services", submenu: true },
+  { label: "Services", href: "/services", submenu: true },
   { label: "Contact", href: "/contact-us" },
 ];
 
 const serviceItems = [
-  { label: "Website Design", href: "/#services" },
-  { label: "Branding", href: "/#services" },
-  { label: "Digital Marketing & SEO", href: "/#services" },
-  { label: "Ecommerce", href: "/#services" },
-  { label: "Website Support & Hosting", href: "/#services" },
+  { label: "Website Design", href: "/services#website-design" },
+  { label: "Branding", href: "/services#branding" },
+  { label: "Digital Marketing & SEO", href: "/services#digital-marketing" },
+  { label: "Ecommerce", href: "/services#other-services" },
+  { label: "Website Support & Hosting", href: "/services#other-services" },
   { label: "Website Audit", href: "/contact-us" },
-  { label: "Web Development", href: "/#services" },
+  { label: "Web Development", href: "/services#website-design" },
 ];
 
 function MenuIcon({ className }: { className?: string }) {
