@@ -86,32 +86,50 @@ export const externalReferenceMedia = {
   },
 } as const;
 
+const landingImages = [
+  "/images/landing/2462974793457421.jfif",
+  "/images/landing/9007268002423833.jfif",
+  "/images/landing/Chaque%20collaboration%20commence%20par%20une%E2%80%A6.jfif",
+  "/images/landing/Detr%C3%A1s%20de%20cada%20operaci%C3%B3n%20hay%20un%20equipo%20coordinado%E2%80%A6.jfif",
+  "/images/landing/Expand%20your%20global%20reach%20and%20communicate%E2%80%A6.jfif",
+  "/images/landing/Good%20Morning%20from%20our%20office%2C%20come%20see%20us%20in%20The%E2%80%A6.jfif",
+  "/images/landing/Philippus%20Fourie%20creates%20clean%2C%20modern%20websites%E2%80%A6.jfif",
+  "/images/landing/_Group%20Of%20People%20In%20Office_%20by%20Stocksy%20Contributor%E2%80%A6.jfif",
+] as const;
+
 export const media = {
-  aboutImagePrimary: "/images/office.jpg",
-  aboutImageSecondary: "/mockups/site-mockup.png",
-  aboutShowreelImage: "/images/landing/2462974793457421.jfif",
+  aboutImagePrimary: landingImages[5],
+  aboutImageSecondary: landingImages[6],
+  aboutShowreelImage: landingImages[0],
+  about: {
+    hero: landingImages[5],
+    cultureWide: landingImages[3],
+    cultureTall: landingImages[7],
+    gallery: [
+      landingImages[0],
+      landingImages[1],
+      landingImages[2],
+      landingImages[4],
+      landingImages[3],
+      landingImages[6],
+      landingImages[2],
+      landingImages[7],
+      landingImages[1],
+    ],
+    team: [landingImages[2], landingImages[4], landingImages[1]],
+  },
   services: {
     websiteDesign: "/media/services.png",
     branding: "/mockups/wayfinder-mockup.png",
     digitalMarketing: "/images/features/performance-driven.svg",
     otherServices: "/media/tips.png",
   },
-  tiles: [
-    "/images/landing/2462974793457421.jfif",
-    "/images/landing/9007268002423833.jfif",
-    "/images/landing/Chaque%20collaboration%20commence%20par%20une%E2%80%A6.jfif",
-    "/images/landing/Detr%C3%A1s%20de%20cada%20operaci%C3%B3n%20hay%20un%20equipo%20coordinado%E2%80%A6.jfif",
-    "/images/landing/Expand%20your%20global%20reach%20and%20communicate%E2%80%A6.jfif",
-    "/images/landing/Good%20Morning%20from%20our%20office%2C%20come%20see%20us%20in%20The%E2%80%A6.jfif",
-    "/images/landing/Philippus%20Fourie%20creates%20clean%2C%20modern%20websites%E2%80%A6.jfif",
-    "/images/landing/_Group%20Of%20People%20In%20Office_%20by%20Stocksy%20Contributor%E2%80%A6.jfif",
-  ],
+  tiles: [...landingImages],
   process: {
-    planning: "/images/landing/9007268002423833.jfif",
-    designing:
-      "/images/landing/Expand%20your%20global%20reach%20and%20communicate%E2%80%A6.jfif",
-    developing: "/images/office.jpg",
-    testing: "/images/about/grid-hero.png",
+    planning: landingImages[1],
+    designing: landingImages[4],
+    developing: landingImages[5],
+    testing: landingImages[6],
   },
   local: {
     projectShowcase: "/media/project-showcase.png",

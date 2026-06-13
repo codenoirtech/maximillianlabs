@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import heroImage from "@/public/images/about/grid-hero.png";
+import { media } from "@/lib/brand";
 
 export function AboutHero() {
   return (
@@ -40,7 +40,7 @@ export function AboutHero() {
         <div className="relative overflow-hidden rounded-xl">
           <div className="relative w-full pb-[50%]">
             <Image
-              src={heroImage}
+              src={media.about.hero}
               alt="Maximillian Labs studio"
               fill
               priority

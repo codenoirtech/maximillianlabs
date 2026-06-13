@@ -1,37 +1,33 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import grid1 from "@/public/images/about/grid-2.webp";
-import grid2 from "@/public/images/about/grid-2.webp";
-import grid3 from "@/public/images/about/grid-3.webp";
-import grid5 from "@/public/images/about/grid-5.webp";
-import grid6 from "@/public/images/about/grid-6.webp";
-import grid7 from "@/public/images/about/grid-6.webp";
-import grid8 from "@/public/images/about/grid-8.webp";
+import { media } from "@/lib/brand";
 import styles from "@/components/about/about-masonry.module.css";
 
 type GridImage = {
-  src: StaticImageData;
+  src: string;
   alt: string;
   caption?: string;
 };
 
-const images: GridImage[] = [
-  { src: grid1, alt: "Team in the office" },
-  { src: grid2, alt: "Office meeting" },
-  { src: grid3, alt: "Client meeting" },
-  {
-    src: grid5,
-    alt: "The people behind the projects",
-    caption: "The people behind the projects",
-  },
-  { src: grid6, alt: "Collaborative workspace" },
-  { src: grid3, alt: "Studio environment" },
-  { src: grid7, alt: "Team playing pool" },
-  { src: grid8, alt: "Design team at work" },
-  { src: grid2, alt: "Office culture" },
-];
+const galleryAlts = [
+  "Creative studio workspace",
+  "Collaborative team environment",
+  "Design consultation",
+  "Global digital collaboration",
+  "The people behind the projects",
+  "Modern web design in progress",
+  "Studio environment",
+  "Team at work",
+  "Office culture",
+] as const;
+
+const images: GridImage[] = media.about.gallery.map((src, index) => ({
+  src,
+  alt: galleryAlts[index] ?? "Maximillian Labs team",
+  ...(index === 4 ? { caption: "The people behind the projects" } : {}),
+}));
 
 export function AboutImageGrid() {
   return (
@@ -39,7 +35,7 @@ export function AboutImageGrid() {
       <div className={styles.gallery}>
         {images.map((image, index) => (
           <motion.figure
-            key={`${image.alt}-${index}`}
+            key={`${image.src}-${index}`}
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-40px" }}
