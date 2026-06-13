@@ -4,33 +4,31 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/fade-in";
 import { SectionLabel } from "@/components/about/section-label";
-import team1 from "@/public/images/about/grid-3.webp";
-import team2 from "@/public/images/about/grid-5.webp";
-import team3 from "@/public/images/about/grid-2.webp";
+import { media } from "@/lib/brand";
 
 const team = [
   {
     name: "Alex Morgan",
     role: "Founder & Managing Director",
-    image: team1,
+    image: media.about.team[0],
     bio: "Alex founded Maximillian Labs with a focus on combining design quality with measurable performance, building the agency into a trusted partner for ambitious brands worldwide.",
   },
   {
     name: "Sarah Chen",
     role: "Operations Director",
-    image: team2,
+    image: media.about.team[1],
     bio: "Sarah oversees day-to-day operations, ensuring every project is delivered efficiently, collaboratively, and on budget across our globally connected team.",
   },
   {
     name: "James Wright",
     role: "Creative Director",
-    image: team3,
+    image: media.about.team[2],
     bio: "James specialises in creating innovative visual concepts that solve complex problems and help clients achieve their business goals through exceptional design.",
   },
   {
     name: "Emily Foster",
     role: "Technical Director",
-    image: team1,
+    image: media.about.team[0],
     bio: "Emily leads front-end development, bringing creative flair and intelligent code together to deliver polished, high-performance digital experiences.",
   },
 ];
