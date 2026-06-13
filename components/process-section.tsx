@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionLabel } from "@/components/about/section-label";
@@ -18,8 +18,7 @@ type ProcessPhase = {
   id: string;
   number: string;
   title: string;
-  poster: string;
-  video: string;
+  image: string;
   steps: ProcessStep[];
 };
 
@@ -28,8 +27,7 @@ const phases: ProcessPhase[] = [
     id: "planning",
     number: "Phase 1 / 4",
     title: "Planning",
-    poster: media.process.planningPoster,
-    video: media.process.planning,
+    image: media.process.planning,
     steps: [
       {
         label: "Discovery",
@@ -52,8 +50,7 @@ const phases: ProcessPhase[] = [
     id: "design",
     number: "Phase 2 / 4",
     title: "Design",
-    poster: media.process.designingPoster,
-    video: media.process.designing,
+    image: media.process.designing,
     steps: [
       {
         label: "Concepts",
@@ -76,8 +73,7 @@ const phases: ProcessPhase[] = [
     id: "development",
     number: "Phase 3 / 4",
     title: "Interactive Development",
-    poster: media.process.developingPoster,
-    video: media.process.developing,
+    image: media.process.developing,
     steps: [
       {
         label: "Development",
@@ -100,8 +96,7 @@ const phases: ProcessPhase[] = [
     id: "testing",
     number: "Phase 4 / 4",
     title: "Testing & Launch",
-    poster: media.process.testingPoster,
-    video: media.process.testing,
+    image: media.process.testing,
     steps: [
       {
         label: "QA Testing",
@@ -126,36 +121,15 @@ const initialStepIndices = Object.fromEntries(
   phases.map((phase) => [phase.id, 0]),
 ) as Record<string, number>;
 
-function GalleryVideo({
-  src,
-  poster,
-  active,
-}: {
-  src: string;
-  poster: string;
-  active: boolean;
-}) {
-  const ref = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = ref.current;
-    if (!video) return;
-    if (active) void video.play().catch(() => undefined);
-    else video.pause();
-  }, [active]);
-
+function GalleryImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <video
-      ref={ref}
-      muted
-      loop
-      playsInline
-      preload="none"
-      poster={poster}
-      className="h-full w-full rounded-[1.5rem] object-cover"
-    >
-      <source src={src} type="video/mp4" />
-    </video>
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="rounded-[1.5rem] object-cover"
+      sizes="(max-width: 1200px) 100vw, 42vw"
+    />
   );
 }
 
@@ -267,68 +241,16 @@ export function ProcessSection() {
           onEnterBack: enter,
         });
 
-        const mobileVideo = item.querySelector<HTMLVideoElement>("video");
-        const desktopVideo = medias[index]?.querySelector("video");
-
-        const videoTrigger = ScrollTrigger.create({
-          trigger: item,
-          start: "top center",
-          end: "bottom top",
-          invalidateOnRefresh: true,
-          onEnter: () => {
-            void mobileVideo?.play().catch(() => undefined);
-            void desktopVideo?.play().catch(() => undefined);
-          },
-          onEnterBack: () => {
-            void mobileVideo?.play().catch(() => undefined);
-            void desktopVideo?.play().catch(() => undefined);
-          },
-          onLeave: () => {
-            mobileVideo?.pause();
-            desktopVideo?.pause();
-          },
-          onLeaveBack: () => {
-            mobileVideo?.pause();
-            desktopVideo?.pause();
-          },
-        });
-
-        return { fadeIn, phaseTrigger, videoTrigger };
+        return { fadeIn, phaseTrigger };
       });
 
       return () => {
         pinTrigger.kill();
-        itemTriggers.forEach(({ fadeIn, phaseTrigger, videoTrigger }) => {
+        itemTriggers.forEach(({ fadeIn, phaseTrigger }) => {
           fadeIn.scrollTrigger?.kill();
           fadeIn.kill();
           phaseTrigger.kill();
-          videoTrigger.kill();
         });
-      };
-    });
-
-    mm.add("(max-width: 1199px)", () => {
-      const triggers = itemRefs.current
-        .filter(Boolean)
-        .map((item) => {
-          const video = item?.querySelector<HTMLVideoElement>("video");
-          if (!video) return null;
-
-          return ScrollTrigger.create({
-            trigger: item,
-            start: "top center",
-            end: "bottom center",
-            invalidateOnRefresh: true,
-            onEnter: () => void video.play().catch(() => undefined),
-            onEnterBack: () => void video.play().catch(() => undefined),
-            onLeave: () => video.pause(),
-            onLeaveBack: () => video.pause(),
-          });
-        })
-        .filter(Boolean);
-
-      return () => {
-        triggers.forEach((trigger) => trigger?.kill());
       };
     });
 
@@ -365,7 +287,7 @@ export function ProcessSection() {
                   <div className="w-full">
                     <figure className="relative mb-7 aspect-video max-w-[24rem] overflow-hidden rounded-[var(--brand-radius)] lg:hidden">
                       <Image
-                        src={phase.poster}
+                        src={phase.image}
                         alt={phase.title}
                         fill
                         className="object-cover"
@@ -436,11 +358,7 @@ export function ProcessSection() {
                         index === 0 ? "relative" : "absolute inset-0"
                       } h-full w-full`}
                     >
-                      <GalleryVideo
-                        src={phase.video}
-                        poster={phase.poster}
-                        active={activePhaseIndex === index}
-                      />
+                      <GalleryImage src={phase.image} alt={phase.title} />
                     </figure>
                   ))}
                   <div
