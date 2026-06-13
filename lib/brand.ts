@@ -28,9 +28,13 @@ export const logos = {
   iconCyan: "/icons/icon-cyan.png",
 } as const;
 
+/**
+ * Legacy reference media still hosted on cbwebsitedesign.co.uk.
+ * Not wired into the landing page — kept for tracking until local replacements exist.
+ */
 const cbd = "https://www.cbwebsitedesign.co.uk/wp-content/uploads";
 
-export const media = {
+export const externalReferenceMedia = {
   aboutVideo: `${cbd}/2025/07/Creative-Brand-Design-Showreel-V3.mp4`,
   aboutVideoPoster: `${cbd}/2025/07/creativeweb-cover.png`,
   aboutImagePrimary: `${cbd}/2025/06/web-design-london.webp`,
@@ -70,6 +74,28 @@ export const media = {
     bespoke: `${cbd}/2025/04/Design-System-Recharge-V1-home-sized.mp4`,
     guaranteed: `${cbd}/2025/04/PortfolioTiles-home-sized.mp4`,
   },
+  process: {
+    planning: `${cbd}/2025/02/CBD_clip_planning3_compressed.mp4`,
+    planningPoster: `${cbd}/2025/02/process-planning-poster.webp`,
+    designing: `${cbd}/2025/02/CBD_clip_designing4_compressed.mp4`,
+    designingPoster: `${cbd}/2025/02/process-designing-poster.webp`,
+    developing: `${cbd}/2025/02/CBD_clip_developing2_compressed.mp4`,
+    developingPoster: `${cbd}/2025/02/process-developing-poster.webp`,
+    testing: `${cbd}/2025/02/CBD_clip_testing2_compressedmore.mp4`,
+    testingPoster: `${cbd}/2025/02/process-testing-poster.webp`,
+  },
+} as const;
+
+export const media = {
+  aboutImagePrimary: "/images/office.jpg",
+  aboutImageSecondary: "/mockups/site-mockup.png",
+  aboutShowreelImage: "/images/landing/2462974793457421.jfif",
+  services: {
+    websiteDesign: "/media/services.png",
+    branding: "/mockups/wayfinder-mockup.png",
+    digitalMarketing: "/images/features/performance-driven.svg",
+    otherServices: "/media/tips.png",
+  },
   tiles: [
     "/images/landing/2462974793457421.jfif",
     "/images/landing/9007268002423833.jfif",
@@ -81,14 +107,11 @@ export const media = {
     "/images/landing/_Group%20Of%20People%20In%20Office_%20by%20Stocksy%20Contributor%E2%80%A6.jfif",
   ],
   process: {
-    planning: `${cbd}/2025/02/CBD_clip_planning3_compressed.mp4`,
-    planningPoster: `${cbd}/2025/02/process-planning-poster.webp`,
-    designing: `${cbd}/2025/02/CBD_clip_designing4_compressed.mp4`,
-    designingPoster: `${cbd}/2025/02/process-designing-poster.webp`,
-    developing: `${cbd}/2025/02/CBD_clip_developing2_compressed.mp4`,
-    developingPoster: `${cbd}/2025/02/process-developing-poster.webp`,
-    testing: `${cbd}/2025/02/CBD_clip_testing2_compressedmore.mp4`,
-    testingPoster: `${cbd}/2025/02/process-testing-poster.webp`,
+    planning: "/images/landing/9007268002423833.jfif",
+    designing:
+      "/images/landing/Expand%20your%20global%20reach%20and%20communicate%E2%80%A6.jfif",
+    developing: "/images/office.jpg",
+    testing: "/images/about/grid-hero.png",
   },
   local: {
     projectShowcase: "/media/project-showcase.png",
