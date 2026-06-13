@@ -4,8 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/fade-in";
 import { SectionLabel } from "@/components/about/section-label";
-import cultureWide from "@/public/images/about/grid-3.webp";
-import cultureTall from "@/public/images/about/grid-5.webp";
+import { media } from "@/lib/brand";
 
 const values = [
   "Mission-driven approach to every project",
@@ -38,7 +37,7 @@ export function AboutCulture() {
               className="absolute left-0 top-8 h-[58%] w-[72%] overflow-hidden rounded-xl"
             >
               <Image
-                src={cultureWide}
+                src={media.about.cultureWide}
                 alt="Creative collaboration"
                 fill
                 sizes="(max-width: 1024px) 80vw, 40vw"
@@ -53,7 +52,7 @@ export function AboutCulture() {
               className="absolute right-0 bottom-0 h-[62%] w-[58%] overflow-hidden rounded-xl shadow-2xl"
             >
               <Image
-                src={cultureTall}
+                src={media.about.cultureTall}
                 alt="Design workspace"
                 fill
                 sizes="(max-width: 1024px) 70vw, 35vw"
