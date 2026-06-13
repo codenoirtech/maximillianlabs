@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { FadeIn } from "@/components/fade-in";
 import { SectionLabel } from "@/components/about/section-label";
 import { media } from "@/lib/brand";
@@ -14,7 +13,6 @@ const projects = [
     description:
       "Our first client projects are in progress. This space will showcase bespoke digital work as launches go live.",
     image: media.local.mockups.site,
-    video: media.features.bespoke,
     status: "In Progress",
     offset: false,
   },
@@ -24,7 +22,6 @@ const projects = [
     description:
       "End-to-end brand and web experiences crafted with aesthetic precision and performance at the core.",
     image: media.local.mockups.wayfinder,
-    video: media.features.highlyRated,
     status: "In Progress",
     offset: true,
   },
@@ -34,7 +31,6 @@ const projects = [
     description:
       "Interactive, responsive builds engineered for growth — tailored to each partner we work with.",
     image: media.local.projectShowcase,
-    video: media.features.guaranteed,
     status: "In Progress",
     offset: false,
   },
@@ -44,7 +40,6 @@ const projects = [
     description:
       "Be among our first featured launches. We're partnering with visionaries ready to architect their digital legacy.",
     image: media.local.mockups.businessCard,
-    video: media.features.accredited,
     status: "Open Slot",
     offset: true,
   },
@@ -55,28 +50,6 @@ function WorkCard({
 }: {
   project: (typeof projects)[number];
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          void video.play().catch(() => undefined);
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
-      },
-      { threshold: 0.4 },
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <Link href="/contact-us" className="group block">
       <figure className="relative aspect-square overflow-hidden rounded-[var(--brand-radius)] bg-[#0a0a0a]">
@@ -84,19 +57,9 @@ function WorkCard({
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           sizes="(max-width: 640px) 100vw, 42vw"
         />
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload="none"
-          className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        >
-          <source src={project.video} type="video/mp4" />
-        </video>
         <ul className="absolute left-4 top-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <li

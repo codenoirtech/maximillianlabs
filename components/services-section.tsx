@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Plus, Minus } from "lucide-react";
@@ -16,8 +17,7 @@ type Service = {
   cta: string;
   description: string[];
   features: ServiceFeature[];
-  video: string;
-  poster?: string;
+  image: string;
 };
 
 const services: Service[] = [
@@ -72,7 +72,7 @@ const services: Service[] = [
         ],
       },
     ],
-    video: media.services.websiteDesign,
+    image: media.services.websiteDesign,
   },
   {
     id: "branding",
@@ -109,8 +109,7 @@ const services: Service[] = [
         ],
       },
     ],
-    video: media.services.branding,
-    poster: media.services.brandingPoster,
+    image: media.services.branding,
   },
   {
     id: "digital-marketing",
@@ -146,7 +145,7 @@ const services: Service[] = [
         ],
       },
     ],
-    video: media.services.digitalMarketing,
+    image: media.services.digitalMarketing,
   },
   {
     id: "other-services",
@@ -173,45 +172,15 @@ const services: Service[] = [
         ],
       },
     ],
-    video: media.services.otherServices,
+    image: media.services.otherServices,
   },
 ];
 
-function ServiceVideo({
-  src,
-  poster,
-}: {
-  src: string;
-  poster?: string;
-}) {
-  const ref = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = ref.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) void video.play().catch(() => undefined);
-        else video.pause();
-      },
-      { threshold: 0.25 },
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
+function ServiceImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <video
-      ref={ref}
-      muted
-      loop
-      playsInline
-      preload="none"
-      poster={poster}
-      className="aspect-[7/5] h-auto w-full rounded-[var(--brand-radius)] object-cover"
-    >
-      <source src={src} type="video/mp4" />
-    </video>
+    <div className="relative aspect-[7/5] w-full overflow-hidden rounded-[var(--brand-radius)]">
+      <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+    </div>
   );
 }
 
@@ -301,7 +270,7 @@ function ServiceBlock({
       </div>
 
       <div className="w-full lg:w-1/2">
-        <ServiceVideo src={service.video} poster={service.poster} />
+        <ServiceImage src={service.image} alt={service.title.join(" ")} />
 
         {service.description.length > 0 ? (
           <div className="mt-8 space-y-5 text-base leading-relaxed text-[#0a0a0a]/80">
